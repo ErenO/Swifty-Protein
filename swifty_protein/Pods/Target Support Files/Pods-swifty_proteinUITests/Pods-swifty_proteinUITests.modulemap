@@ -1,0 +1,6 @@
+framework module Pods_swifty_proteinUITests {
+  umbrella header "Pods-swifty_proteinUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
