@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="-66.549295774647888" y="82.5"/>
         </scene>
-        <!--ProteinTableViewController-->
+        <!--NavigationController-->
         <scene sceneID="npo-d0-8mW">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProteinTable" referencedIdentifier="ProteinTableViewController" id="9Gc-4v-dIF" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ProteinTable" referencedIdentifier="NavigationController" id="9Gc-4v-dIF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rqs-65-onq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="539" y="89"/>
