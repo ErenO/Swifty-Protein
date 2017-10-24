@@ -17,6 +17,12 @@
 		74FA50081F9DF2290071B098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FA50061F9DF2290071B098 /* LaunchScreen.storyboard */; };
 		74FA50131F9DF2290071B098 /* swifty_proteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA50121F9DF2290071B098 /* swifty_proteinTests.swift */; };
 		74FA501E1F9DF2290071B098 /* swifty_proteinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA501D1F9DF2290071B098 /* swifty_proteinUITests.swift */; };
+		901F12771F9F8AF000C3DC7E /* ProteinTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 901F12761F9F8AF000C3DC7E /* ProteinTable.storyboard */; };
+		901F12791F9F8B7400C3DC7E /* ProteinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F12781F9F8B7400C3DC7E /* ProteinTableViewCell.swift */; };
+		901F127B1F9F8BDA00C3DC7E /* Protein.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 901F127A1F9F8BDA00C3DC7E /* Protein.storyboard */; };
+		901F127D1F9F8C1500C3DC7E /* ProteinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */; };
+		901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */; };
+		901F12811F9F8EE800C3DC7E /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 901F12801F9F8EE800C3DC7E /* ligands.txt */; };
 		9081FD961F9F556400583A83 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9081FD951F9F556400583A83 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +59,12 @@
 		74FA501D1F9DF2290071B098 /* swifty_proteinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinUITests.swift; sourceTree = "<group>"; };
 		74FA501F1F9DF2290071B098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C4A2AB81B9986AC8DE992CE /* Pods_swifty_proteinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swifty_proteinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		901F12761F9F8AF000C3DC7E /* ProteinTable.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProteinTable.storyboard; sourceTree = "<group>"; };
+		901F12781F9F8B7400C3DC7E /* ProteinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinTableViewCell.swift; sourceTree = "<group>"; };
+		901F127A1F9F8BDA00C3DC7E /* Protein.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Protein.storyboard; sourceTree = "<group>"; };
+		901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewController.swift; sourceTree = "<group>"; };
+		901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinTableViewController.swift; sourceTree = "<group>"; };
+		901F12801F9F8EE800C3DC7E /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = SOURCE_ROOT; };
 		9081FD951F9F556400583A83 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		9C36C9F3FE6291B2CF7294D3 /* Pods-swifty_proteinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_proteinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_proteinUITests/Pods-swifty_proteinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBBFCA25D88E5FC05C50D2A8 /* Pods-swifty_protein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_protein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_protein/Pods-swifty_protein.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,8 +154,14 @@
 			isa = PBXGroup;
 			children = (
 				74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */,
+				901F12801F9F8EE800C3DC7E /* ligands.txt */,
 				9020D2FA1F9E0BFC00B1D12F /* ViewControllers */,
 				74FA50011F9DF2290071B098 /* Main.storyboard */,
+				901F12761F9F8AF000C3DC7E /* ProteinTable.storyboard */,
+				901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */,
+				901F127A1F9F8BDA00C3DC7E /* Protein.storyboard */,
+				901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */,
+				901F12781F9F8B7400C3DC7E /* ProteinTableViewCell.swift */,
 				74FA50041F9DF2290071B098 /* Assets.xcassets */,
 				74FA50061F9DF2290071B098 /* LaunchScreen.storyboard */,
 				74FA50091F9DF2290071B098 /* Info.plist */,
@@ -293,9 +311,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901F127B1F9F8BDA00C3DC7E /* Protein.storyboard in Resources */,
+				901F12811F9F8EE800C3DC7E /* ligands.txt in Resources */,
 				74FA50081F9DF2290071B098 /* LaunchScreen.storyboard in Resources */,
 				74FA50051F9DF2290071B098 /* Assets.xcassets in Resources */,
 				74FA50031F9DF2290071B098 /* Main.storyboard in Resources */,
+				901F12771F9F8AF000C3DC7E /* ProteinTable.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +479,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901F12791F9F8B7400C3DC7E /* ProteinTableViewCell.swift in Sources */,
+				901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */,
 				74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */,
+				901F127D1F9F8C1500C3DC7E /* ProteinViewController.swift in Sources */,
 				74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

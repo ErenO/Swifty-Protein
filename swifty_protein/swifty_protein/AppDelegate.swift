@@ -15,7 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let filepath = Bundle.main.path(forResource: "ligands", ofType: "txt") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                let lines = contents.components(separatedBy: "\n")
+                UserDefaults.standard.set(lines, forKey: "ligands")
+                UserDefaults.standard.synchronize()
+            }
+            catch {
+                print ("Problem reading file")
+            }
+        }
+        else
+        {
+            print ("File not found")
+        }
         return true
     }
 

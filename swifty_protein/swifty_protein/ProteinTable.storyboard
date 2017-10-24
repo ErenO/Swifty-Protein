@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Protein Table View Controller-->
+        <scene sceneID="ph7-Pe-z8S">
+            <objects>
+                <viewController storyboardIdentifier="ProteinTableViewController" id="PvP-KW-xfA" customClass="ProteinTableViewController" customModule="swifty_protein" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R6G-ZH-hX4"/>
+                        <viewControllerLayoutGuide type="bottom" id="5hB-mz-qyt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RGG-7v-4r3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qzP-dK-cGN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="proteinCell" rowHeight="75" id="lqN-3w-bWT" customClass="ProteinTableViewCell" customModule="swifty_protein" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lqN-3w-bWT" id="POs-6M-u7o">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlI-JF-GP1">
+                                                    <rect key="frame" x="8" y="27" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wlI-JF-GP1" secondAttribute="bottom" constant="18.5" id="B6h-0U-UNL"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="wlI-JF-GP1" secondAttribute="leading" id="VKS-Ho-bFY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wlI-JF-GP1" secondAttribute="trailing" id="XZj-O7-BHh"/>
+                                                <constraint firstItem="wlI-JF-GP1" firstAttribute="top" secondItem="POs-6M-u7o" secondAttribute="topMargin" constant="19" id="gtE-MJ-xcU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="wlI-JF-GP1" id="wlS-RP-FqR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PvP-KW-xfA" id="Nez-as-lc6"/>
+                                    <outlet property="delegate" destination="PvP-KW-xfA" id="LqG-Ua-4Tr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qzP-dK-cGN" secondAttribute="trailing" id="Gub-lD-jI0"/>
+                            <constraint firstItem="5hB-mz-qyt" firstAttribute="top" secondItem="qzP-dK-cGN" secondAttribute="bottom" id="VhE-66-2ou"/>
+                            <constraint firstItem="qzP-dK-cGN" firstAttribute="top" secondItem="R6G-ZH-hX4" secondAttribute="bottom" id="iqn-KU-yk9"/>
+                            <constraint firstItem="qzP-dK-cGN" firstAttribute="leading" secondItem="RGG-7v-4r3" secondAttribute="leading" id="yIv-f2-cpg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="qzP-dK-cGN" id="HSY-pn-hzh"/>
+                        <segue destination="d0D-At-ObU" kind="show" identifier="TableToProtein" id="bfA-qQ-NSR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zy8-Wk-T4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="85.907046476761622"/>
+        </scene>
+        <!--ProteinViewController-->
+        <scene sceneID="jPB-iI-o6q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Protein" referencedIdentifier="ProteinViewController" id="d0D-At-ObU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HN3-iz-Wg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="85"/>
+        </scene>
+    </scenes>
+</document>

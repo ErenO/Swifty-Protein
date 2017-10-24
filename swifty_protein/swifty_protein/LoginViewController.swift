@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
             self.enter.isHidden = false
         }
     }
+    @IBAction func clickEnter(_ sender: Any) {
+        self.goToTable()
+    }
     
     func showTouchId() {
         if lacontext.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
@@ -38,6 +41,7 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     if isYou {
                         print("Do segue")
+                        self.goToTable()
                     }
                     else {
                         DispatchQueue.main.async {
@@ -56,6 +60,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func clickFingerprint(_ sender: Any) {
         self.showTouchId()
+    }
+    
+    func goToTable() {
+        self.performSegue(withIdentifier: "LoginToTable", sender: nil)
     }
     
 }
