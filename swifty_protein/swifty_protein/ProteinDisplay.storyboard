@@ -20,8 +20,28 @@
                     <view key="view" contentMode="scaleToFill" id="tyk-6U-zJ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHM-fu-Hua">
+                                <rect key="frame" x="169" y="323" width="37" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eyL-4A-Sc7"/>
+                                    <constraint firstAttribute="width" constant="37" id="oDV-Me-oUW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gHM-fu-Hua" firstAttribute="centerX" secondItem="tyk-6U-zJ1" secondAttribute="centerX" id="TUQ-fB-bFW"/>
+                            <constraint firstItem="gHM-fu-Hua" firstAttribute="centerY" secondItem="tyk-6U-zJ1" secondAttribute="centerY" id="kHU-HT-BpG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="gHM-fu-Hua" id="NEo-tB-m54"/>
+                        <outlet property="nameLbl" destination="gHM-fu-Hua" id="O3W-Xh-MDC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5r-aw-Trq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

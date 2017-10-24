@@ -10,8 +10,10 @@ import UIKit
 
 class ProteinTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableview: UITableView!
     var proteinList: [String]?
     var i = 0
+    var textSelected: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,26 +35,33 @@ class ProteinTableVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ProtCelll") as? ProteinTableViewCell {
-            if ((self.proteinList?[self.i]) != nil) {
-                cell.name.text = self.proteinList?[self.i]
-                self.i += 1
-                return cell
-            }
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ProtCell") as? ProteinTableViewCell {
+            cell.name.text = self.proteinList?[indexPath.row] ?? ""
+//            if ((self.proteinList?[self.i]) != nil) {
+//                cell.name.text = self.proteinList?[self.i]
+//                self.i += 1
+//                return cell
+//            }
+            return cell
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("i selected a row")
-        self.performSegue(withIdentifier: "TableToProtein", sender: indexPath)
+        self.textSelected = self.proteinList?[indexPath.row]
+        self.performSegue(withIdentifier: "TableToProtein", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TableToProtein" {
-            if let nbTitle = sender as? Int {
+            if let nbTitle = self.textSelected {
+                print("i clicked over \(nbTitle)")
                 if let vc = segue.destination as?  ProteinDisplayVC {
-//                    vc.title = proteinList[nbTitle]
+//                    print(vc)
+                    print("changing the name of the label")
+//                    vc.name!.text = nbTitle
+//                    print(vc.nameLbl.text!)
                 }
             }
         }
