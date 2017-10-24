@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ProteinTableVC-->
+        <scene sceneID="2UG-37-fC4">
+            <objects>
+                <viewController storyboardIdentifier="ProteinTableVC" title="ProteinTableVC" id="A7r-J2-HHN" customClass="ProteinTableVC" customModule="swifty_protein" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XCd-Zb-Ecr"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fO-gF-aFa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vZK-Re-cqV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oyr-2h-4Pg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProtCell" rowHeight="66" id="1ht-l5-Dng" customClass="ProteinTableViewCell" customModule="swifty_protein" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ht-l5-Dng" id="9jf-8G-Dy0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgl-SY-Bx5">
+                                                    <rect key="frame" x="13" y="12" width="349" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bgl-SY-Bx5" firstAttribute="leading" secondItem="9jf-8G-Dy0" secondAttribute="leadingMargin" constant="5" id="9nD-uy-oks"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bgl-SY-Bx5" secondAttribute="bottom" constant="4.5" id="C43-Is-qVd"/>
+                                                <constraint firstItem="bgl-SY-Bx5" firstAttribute="top" secondItem="9jf-8G-Dy0" secondAttribute="topMargin" constant="4" id="Qko-mg-xdC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bgl-SY-Bx5" secondAttribute="trailing" constant="5" id="h3x-0K-3f9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="bgl-SY-Bx5" id="7WI-1V-zcD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="A7r-J2-HHN" id="SrX-wV-qfE"/>
+                                    <outlet property="delegate" destination="A7r-J2-HHN" id="erB-Rh-0mX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oyr-2h-4Pg" firstAttribute="top" secondItem="vZK-Re-cqV" secondAttribute="top" id="NuD-fh-Vzb"/>
+                            <constraint firstAttribute="trailing" secondItem="oyr-2h-4Pg" secondAttribute="trailing" id="fgJ-HA-QGl"/>
+                            <constraint firstItem="oyr-2h-4Pg" firstAttribute="leading" secondItem="vZK-Re-cqV" secondAttribute="leading" id="z6F-GX-UJj"/>
+                            <constraint firstItem="2fO-gF-aFa" firstAttribute="top" secondItem="oyr-2h-4Pg" secondAttribute="bottom" id="zAR-qJ-sTo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="qsj-D7-yd1" kind="show" identifier="TableToProtein" id="1pA-h8-gDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8b3-l6-cVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-194.40000000000001" y="-1.3493253373313345"/>
+        </scene>
+        <!--ProteinDisplayVC-->
+        <scene sceneID="vLs-hh-MZw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProteinDisplay" referencedIdentifier="ProteinDisplayVC" id="qsj-D7-yd1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0i-fO-HMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="-2"/>
+        </scene>
+    </scenes>
+</document>
