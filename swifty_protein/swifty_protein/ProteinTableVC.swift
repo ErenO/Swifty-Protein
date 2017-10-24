@@ -58,10 +58,7 @@ class ProteinTableVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let nbTitle = self.textSelected {
                 print("i clicked over \(nbTitle)")
                 if let vc = segue.destination as?  ProteinDisplayVC {
-//                    print(vc)
-                    print("changing the name of the label")
-//                    vc.name!.text = nbTitle
-//                    print(vc.nameLbl.text!)
+                    vc.proteinToDisplay = nbTitle
                 }
             }
         }

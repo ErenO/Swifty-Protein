@@ -10,15 +10,15 @@ import UIKit
 
 class ProteinDisplayVC: UIViewController {
 
-    var protName: String = "bonjour"
+    var proteinToDisplay: String!
     
-    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var protLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.protLbl.text = proteinToDisplay
         // Do any additional setup after loading the view.
-        self.nameLbl.text = protName
+        
     }
 
     override func didReceiveMemoryWarning() {
