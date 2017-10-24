@@ -1,26 +1,114 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="swifty_protein" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KP8-O1-NaH">
+                                <rect key="frame" x="60" y="145" width="449" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gae-LH-5wW">
+                                <rect key="frame" x="141" y="183" width="286" height="30"/>
+                                <state key="normal" title="Enter"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="748" image="1j+ojl1FOMkX9WypfBe43D6kjfKCrBRLnx7EwXs1M3EMoAJtlSAlgfRo9fo9" translatesAutoresizingMaskIntoConstraints="NO" id="jiC-PC-VoU">
+                                <rect key="frame" x="240" y="20" width="88" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="0Q0-48-1Mz"/>
+                                    <constraint firstAttribute="width" constant="88" id="614-AT-6m5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="L5Q-D7-jxg"/>
+                                    <constraint firstAttribute="height" constant="53" id="LrZ-cy-UWp"/>
+                                    <constraint firstAttribute="height" constant="53" id="vOD-mO-qel"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Q0-48-1Mz"/>
+                                        <exclude reference="614-AT-6m5"/>
+                                        <exclude reference="L5Q-D7-jxg"/>
+                                        <exclude reference="LrZ-cy-UWp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0Q0-48-1Mz"/>
+                                        <include reference="614-AT-6m5"/>
+                                        <include reference="L5Q-D7-jxg"/>
+                                        <include reference="LrZ-cy-UWp"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oN-yS-vUi">
+                                <rect key="frame" x="178.5" y="105" width="211" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="cAm-1o-nAL"/>
+                                    <constraint firstAttribute="width" constant="211" id="tcy-Nv-qef"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="fingerprint"/>
+                                <connections>
+                                    <action selector="clickFingerprint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pGZ-Xq-qOK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KP8-O1-NaH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Kv-Lc-k9s"/>
+                            <constraint firstItem="gae-LH-5wW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="121" id="41F-xX-XF0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gae-LH-5wW" secondAttribute="trailing" constant="121" id="4cC-Ka-1Ac"/>
+                            <constraint firstItem="jiC-PC-VoU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4fI-QS-Lfx"/>
+                            <constraint firstItem="KP8-O1-NaH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="BFp-2M-DeF"/>
+                            <constraint firstItem="jiC-PC-VoU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LFe-bs-AW0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1oN-yS-vUi" secondAttribute="bottom" constant="20" id="SYq-Kh-iVJ"/>
+                            <constraint firstItem="jiC-PC-VoU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViT-o7-dhM"/>
+                            <constraint firstItem="1oN-yS-vUi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="afp-Jx-kbR"/>
+                            <constraint firstItem="KP8-O1-NaH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="eIe-qD-vvi"/>
+                            <constraint firstItem="gae-LH-5wW" firstAttribute="top" secondItem="KP8-O1-NaH" secondAttribute="bottom" constant="8" id="kkb-QD-kHf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KP8-O1-NaH" secondAttribute="trailing" constant="39" id="lwX-Dx-Ec7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LFe-bs-AW0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="LFe-bs-AW0"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="enter" destination="gae-LH-5wW" id="41j-9d-wdS"/>
+                        <outlet property="passwordTextField" destination="KP8-O1-NaH" id="iWh-a6-Dfr"/>
+                        <outlet property="touchId" destination="1oN-yS-vUi" id="rhu-RL-kE5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-66.549295774647888" y="82.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1j+ojl1FOMkX9WypfBe43D6kjfKCrBRLnx7EwXs1M3EMoAJtlSAlgfRo9fo9" width="88" height="53"/>
+        <image name="fingerprint" width="300" height="300"/>
+    </resources>
 </document>

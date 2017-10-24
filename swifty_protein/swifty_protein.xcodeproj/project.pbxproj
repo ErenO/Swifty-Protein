@@ -11,12 +11,13 @@
 		47F37687F7B36A60A7440597 /* Pods_swifty_proteinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3952D46E9AE553A6E677004 /* Pods_swifty_proteinUITests.framework */; };
 		565DAEC391A461EF533F9D06 /* Pods_swifty_protein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79534A4BB6F9A6D1BB51B76 /* Pods_swifty_protein.framework */; };
 		74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */; };
-		74FA50001F9DF2290071B098 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA4FFF1F9DF2290071B098 /* ViewController.swift */; };
+		74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */; };
 		74FA50031F9DF2290071B098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FA50011F9DF2290071B098 /* Main.storyboard */; };
 		74FA50051F9DF2290071B098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74FA50041F9DF2290071B098 /* Assets.xcassets */; };
 		74FA50081F9DF2290071B098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FA50061F9DF2290071B098 /* LaunchScreen.storyboard */; };
 		74FA50131F9DF2290071B098 /* swifty_proteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA50121F9DF2290071B098 /* swifty_proteinTests.swift */; };
 		74FA501E1F9DF2290071B098 /* swifty_proteinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA501D1F9DF2290071B098 /* swifty_proteinUITests.swift */; };
+		9081FD961F9F556400583A83 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9081FD951F9F556400583A83 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 		4FC939B8967915BE22BE6310 /* Pods-swifty_proteinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_proteinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_proteinTests/Pods-swifty_proteinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74FA4FFA1F9DF2290071B098 /* swifty_protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifty_protein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74FA4FFF1F9DF2290071B098 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74FA50021F9DF2290071B098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74FA50041F9DF2290071B098 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74FA50071F9DF2290071B098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		74FA501D1F9DF2290071B098 /* swifty_proteinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinUITests.swift; sourceTree = "<group>"; };
 		74FA501F1F9DF2290071B098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C4A2AB81B9986AC8DE992CE /* Pods_swifty_proteinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swifty_proteinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9081FD951F9F556400583A83 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		9C36C9F3FE6291B2CF7294D3 /* Pods-swifty_proteinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_proteinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_proteinUITests/Pods-swifty_proteinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBBFCA25D88E5FC05C50D2A8 /* Pods-swifty_protein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_protein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_protein/Pods-swifty_protein.debug.xcconfig"; sourceTree = "<group>"; };
 		D3952D46E9AE553A6E677004 /* Pods_swifty_proteinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swifty_proteinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9081FD961F9F556400583A83 /* LocalAuthentication.framework in Frameworks */,
 				565DAEC391A461EF533F9D06 /* Pods_swifty_protein.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +95,7 @@
 		24A595A9A6B90F66CCC2AFDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9081FD951F9F556400583A83 /* LocalAuthentication.framework */,
 				E79534A4BB6F9A6D1BB51B76 /* Pods_swifty_protein.framework */,
 				7C4A2AB81B9986AC8DE992CE /* Pods_swifty_proteinTests.framework */,
 				D3952D46E9AE553A6E677004 /* Pods_swifty_proteinUITests.framework */,
@@ -138,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */,
-				74FA4FFF1F9DF2290071B098 /* ViewController.swift */,
+				9020D2FA1F9E0BFC00B1D12F /* ViewControllers */,
 				74FA50011F9DF2290071B098 /* Main.storyboard */,
 				74FA50041F9DF2290071B098 /* Assets.xcassets */,
 				74FA50061F9DF2290071B098 /* LaunchScreen.storyboard */,
@@ -163,6 +167,14 @@
 				74FA501F1F9DF2290071B098 /* Info.plist */,
 			);
 			path = swifty_proteinUITests;
+			sourceTree = "<group>";
+		};
+		9020D2FA1F9E0BFC00B1D12F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,7 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74FA50001F9DF2290071B098 /* ViewController.swift in Sources */,
+				74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */,
 				74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +712,7 @@
 				74FA50241F9DF2290071B098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74FA50251F9DF2290071B098 /* Build configuration list for PBXNativeTarget "swifty_proteinTests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +721,7 @@
 				74FA50271F9DF2290071B098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74FA50281F9DF2290071B098 /* Build configuration list for PBXNativeTarget "swifty_proteinUITests" */ = {
 			isa = XCConfigurationList;
@@ -716,6 +730,7 @@
 				74FA502A1F9DF2290071B098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
