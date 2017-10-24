@@ -34,7 +34,7 @@ class ProteinTableViewController: UIViewController  {
             if let nbTitle = self.textSelected {
                 print("i clicked over \(nbTitle)")
                 if let vc = segue.destination as? ProteinViewController {
-                    vc.proteinToDisplay = nbTitle
+                    
                 }
             }
         }

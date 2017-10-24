@@ -10,8 +10,6 @@ import UIKit
 
 class ProteinViewController: UIViewController {
 
-    var proteinToDisplay: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
