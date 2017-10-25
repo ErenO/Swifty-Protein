@@ -12,15 +12,17 @@ class ProteinTableViewController: UIViewController  {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableview: UITableView!
+    
     var proteinList: [String]!
     var filteredData: [String]?
     var isSearching: Bool = false
-    var i = 0
     var textSelected: String?
+    var networkController: NetworkController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let session = UserDefaults.standard
+        networkController = NetworkController()
         
         tableview.delegate = self
         tableview.dataSource = self
@@ -32,13 +34,15 @@ class ProteinTableViewController: UIViewController  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TableToProtein" {
             if let nbTitle = self.textSelected {
-                print("i clicked over \(nbTitle)")
-//                if let vc = segue.destination as? ProteinViewController {
-//                    
-//                }
+                networkController.loadPDB(of: nbTitle) { response in
+                    print("callback\n")
+                    print(response)
+                }
             }
         }
     }
+    
+    
 }
 
 extension ProteinTableViewController:  UITableViewDelegate, UITableViewDataSource {

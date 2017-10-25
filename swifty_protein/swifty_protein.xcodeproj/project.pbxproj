@@ -23,8 +23,9 @@
 		901F127D1F9F8C1500C3DC7E /* ProteinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */; };
 		901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */; };
 		901F12811F9F8EE800C3DC7E /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 901F12801F9F8EE800C3DC7E /* ligands.txt */; };
-		901F12831F9FBEFF00C3DC7E /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F12821F9FBEFF00C3DC7E /* Shapes.swift */; };
 		9081FD961F9F556400583A83 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9081FD951F9F556400583A83 /* LocalAuthentication.framework */; };
+		90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB821A1FA07FF70013EB9B /* NetworkController.swift */; };
+		90FB821D1FA0882A0013EB9B /* PdbParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB821C1FA0882A0013EB9B /* PdbParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +67,9 @@
 		901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewController.swift; sourceTree = "<group>"; };
 		901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinTableViewController.swift; sourceTree = "<group>"; };
 		901F12801F9F8EE800C3DC7E /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = SOURCE_ROOT; };
-		901F12821F9FBEFF00C3DC7E /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		9081FD951F9F556400583A83 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		90FB821A1FA07FF70013EB9B /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		90FB821C1FA0882A0013EB9B /* PdbParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdbParser.swift; sourceTree = "<group>"; };
 		9C36C9F3FE6291B2CF7294D3 /* Pods-swifty_proteinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_proteinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_proteinUITests/Pods-swifty_proteinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBBFCA25D88E5FC05C50D2A8 /* Pods-swifty_protein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_protein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_protein/Pods-swifty_protein.debug.xcconfig"; sourceTree = "<group>"; };
 		D3952D46E9AE553A6E677004 /* Pods_swifty_proteinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swifty_proteinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,16 +157,12 @@
 		74FA4FFC1F9DF2290071B098 /* swifty_protein */ = {
 			isa = PBXGroup;
 			children = (
+				90FB82201FA089050013EB9B /* Views */,
 				74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */,
 				901F12801F9F8EE800C3DC7E /* ligands.txt */,
 				9020D2FA1F9E0BFC00B1D12F /* ViewControllers */,
-				74FA50011F9DF2290071B098 /* Main.storyboard */,
-				901F12761F9F8AF000C3DC7E /* ProteinTable.storyboard */,
-				901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */,
-				901F127A1F9F8BDA00C3DC7E /* Protein.storyboard */,
-				901F12821F9FBEFF00C3DC7E /* Shapes.swift */,
-				901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */,
-				901F12781F9F8B7400C3DC7E /* ProteinTableViewCell.swift */,
+				90FB821E1FA088B90013EB9B /* StoryBoards */,
+				90FB821F1FA088F00013EB9B /* Helpers */,
 				74FA50041F9DF2290071B098 /* Assets.xcassets */,
 				74FA50061F9DF2290071B098 /* LaunchScreen.storyboard */,
 				74FA50091F9DF2290071B098 /* Info.plist */,
@@ -194,8 +192,37 @@
 			isa = PBXGroup;
 			children = (
 				74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */,
+				901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */,
+				901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90FB821E1FA088B90013EB9B /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				74FA50011F9DF2290071B098 /* Main.storyboard */,
+				901F12761F9F8AF000C3DC7E /* ProteinTable.storyboard */,
+				901F127A1F9F8BDA00C3DC7E /* Protein.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		90FB821F1FA088F00013EB9B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				90FB821A1FA07FF70013EB9B /* NetworkController.swift */,
+				90FB821C1FA0882A0013EB9B /* PdbParser.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		90FB82201FA089050013EB9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				901F12781F9F8B7400C3DC7E /* ProteinTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,10 +511,11 @@
 			files = (
 				901F12791F9F8B7400C3DC7E /* ProteinTableViewCell.swift in Sources */,
 				901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */,
+				90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */,
 				74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */,
 				901F127D1F9F8C1500C3DC7E /* ProteinViewController.swift in Sources */,
 				74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */,
-				901F12831F9FBEFF00C3DC7E /* Shapes.swift in Sources */,
+				90FB821D1FA0882A0013EB9B /* PdbParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

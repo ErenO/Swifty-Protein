@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 
 class ProteinViewController: UIViewController {
-
+    
     @IBOutlet weak var mySCNView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
@@ -22,11 +22,11 @@ class ProteinViewController: UIViewController {
         setupCamera()
         spawnShape()
     }
-
+    
     override var shouldAutorotate: Bool {
         return true
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -50,13 +50,10 @@ class ProteinViewController: UIViewController {
     
     func spawnShape() {
         var geometry:SCNGeometry
-        
-        switch ShapeType.random() {
-        default:
-            geometry = SCNCone(topRadius: 0.25, bottomRadius: 0.5, height: 1.0)
-            let geometryNode = SCNNode(geometry: geometry)
-            scnScene.rootNode.addChildNode(geometryNode)
-        }
+        geometry = SCNSphere(radius: 1)
+        let geometryNode = SCNNode(geometry: geometry)
+        geometryNode.position = SCNVector3(x: 3.0, y: -2.0, z: 0.0)
+        scnScene.rootNode.addChildNode(geometryNode)
     }
     
 }
