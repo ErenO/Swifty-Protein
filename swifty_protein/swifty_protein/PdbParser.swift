@@ -15,6 +15,7 @@ class PdbParser {
         let array = data.components(separatedBy: "\n")
         for atomData in array {
             let atomDataArray = atomData.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }
+            print(atomDataArray)
             if !atomDataArray.isEmpty {
                 if atomDataArray[0] == "ATOM" {
                     let atom = self.getAtom(data: atomDataArray)
@@ -44,7 +45,7 @@ class PdbParser {
     
     func getConnection(data: [String]) -> Connection {
         let connection = Connection()
-        
+//        print(data)
         return connection
     }
     

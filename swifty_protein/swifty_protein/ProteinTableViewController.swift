@@ -36,11 +36,10 @@ class ProteinTableViewController: UIViewController  {
             if let nbTitle = self.textSelected {
                 networkController.loadPDB(of: nbTitle) { response in
                     print("callback")
-                    if let myLigand = response as? Ligand {
-                        print(myLigand.atoms)
-                    }
-                    else {
-                        print(response )
+                    if let vc = segue.destination as? ProteinViewController {
+                        if let myLigand = response as? Ligand {
+                            vc.ligandToDisplay = myLigand
+                        }
                     }
                 }
             }

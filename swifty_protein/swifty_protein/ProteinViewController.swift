@@ -14,6 +14,11 @@ class ProteinViewController: UIViewController {
     @IBOutlet weak var mySCNView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
+    var ligandToDisplay: Ligand? {
+        didSet {
+            self.spawnShape()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +54,15 @@ class ProteinViewController: UIViewController {
     }
     
     func spawnShape() {
-        var geometry:SCNGeometry
-        geometry = SCNSphere(radius: 1)
-        let geometryNode = SCNNode(geometry: geometry)
-        geometryNode.position = SCNVector3(x: 3.0, y: -2.0, z: 0.0)
-        scnScene.rootNode.addChildNode(geometryNode)
+        if (self.ligandToDisplay != nil) {
+            for atom in (self.ligandToDisplay?.atoms)! {
+                var geometry:SCNGeometry
+                geometry = SCNSphere(radius: 0.1)
+                let geometryNode = SCNNode(geometry: geometry)
+                geometryNode.position = SCNVector3(x: atom.x, y: atom.y, z: atom.z)
+                scnScene.rootNode.addChildNode(geometryNode)
+            }
+        }
     }
     
 }

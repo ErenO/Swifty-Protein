@@ -27,7 +27,6 @@ class NetworkController {
             if response.response?.statusCode == 200 {
                 let fileData = String(data: response.data!, encoding: .utf8)
                 let myLigand = self.parser.getMyLigand(name: of, data: fileData!)
-                print(myLigand)
                 callback(myLigand)
             }
         })
