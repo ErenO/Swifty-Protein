@@ -7,5 +7,5 @@
 //
 
 struct Connection {
-    
+    var atoms: (Int, Int)!
 }

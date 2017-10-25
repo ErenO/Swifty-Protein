@@ -16,7 +16,7 @@ class ProteinViewController: UIViewController {
     var cameraNode: SCNNode!
     var ligandToDisplay: Ligand? {
         didSet {
-            self.spawnShape()
+            self.spawnAtoms()
         }
     }
     
@@ -25,7 +25,7 @@ class ProteinViewController: UIViewController {
         setupView()
         setupScene()
         setupCamera()
-        spawnShape()
+        spawnAtoms()
     }
     
     override var shouldAutorotate: Bool {
@@ -53,16 +53,90 @@ class ProteinViewController: UIViewController {
         scnScene.rootNode.addChildNode(cameraNode)
     }
     
-    func spawnShape() {
+    func spawnLigand() {
         if (self.ligandToDisplay != nil) {
             for atom in (self.ligandToDisplay?.atoms)! {
-                var geometry:SCNGeometry
-                geometry = SCNSphere(radius: 0.1)
-                let geometryNode = SCNNode(geometry: geometry)
-                geometryNode.position = SCNVector3(x: atom.x, y: atom.y, z: atom.z)
-                scnScene.rootNode.addChildNode(geometryNode)
+                self.spawn(atom: atom)
+            }
+            for connection in (self.ligandToDisplay?.connections)! {
+                self.spawn(connection: connection)
             }
         }
     }
     
+    func spawnAtoms() {
+        if (self.ligandToDisplay != nil) {
+            for atom in (self.ligandToDisplay?.atoms)! {
+                self.spawn(atom: atom)
+            }
+            for connection in (self.ligandToDisplay?.connections)! {
+                self.spawn(connection: connection)
+            }
+        }
+    }
+    
+    func spawn(atom: Atom) {
+        var geometry:SCNGeometry
+        geometry = SCNSphere(radius: 0.1)
+        
+        let geometryNode = SCNNode(geometry: geometry)
+        geometryNode.position = SCNVector3(x: atom.x, y: atom.y, z: atom.z)
+        
+        scnScene.rootNode.addChildNode(geometryNode)
+    }
+    
+    func spawn(connection: Connection) {
+        var geometry:SCNGeometry
+        geometry = SCNCylinder(radius: 0.3, height: 0.2)
+//        let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
+        let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
+        let v2 = SCNVector3(x: (secondAtom?.x)!, y: (secondAtom?.y)!, z: (secondAtom?.z)!)
+        
+        let position = self.getConnectionPosition(connection: connection)
+        let geometryNode = SCNNode(geometry: geometry)
+        
+//        let height = CGFloat(v1.distance(v2))
+        
+        geometryNode.position = SCNVector3(x: position.0, y: position.1, z: position.2)
+        
+        let rotp = v2 - SCNVector3(x: position.0, y: position.1, z: position.2)
+        
+        let rotx = atan2( rotp.y, rotp.x )
+        geometryNode.eulerAngles = SCNVector3(0, 0, rotx)
+        
+        scnScene.rootNode.addChildNode(geometryNode)
+    }
+    
+    func getConnectionPosition(connection: Connection) -> (Float, Float, Float) {
+        let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
+        let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
+        return self.getMiddle(between: firstAtom!, and: secondAtom!)
+    }
+    
+    func getMiddle(between first: Atom, and second: Atom) -> (x: Float, y: Float, z: Float){
+        let x = (first.x + second.x) / 2
+        let y = (first.y + second.y) / 2
+        let z = (first.z + second.z) / 2
+        return (x, y, z)
+    }
+    
+}
+
+func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+    return SCNVector3Make(left.x - right.x, left.y - right.y, left.z - right.z)
+}
+
+private extension SCNVector3{
+    func distance(_ receiver: SCNVector3) -> Float{
+        let xd = receiver.x - self.x
+        let yd = receiver.y - self.y
+        let zd = receiver.z - self.z
+        let distance = Float(sqrt(xd * xd + yd * yd + zd * zd))
+        
+        if (distance < 0){
+            return (distance * -1)
+        } else {
+            return (distance)
+        }
+    }
 }

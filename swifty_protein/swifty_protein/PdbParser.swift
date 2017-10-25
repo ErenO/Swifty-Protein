@@ -15,15 +15,14 @@ class PdbParser {
         let array = data.components(separatedBy: "\n")
         for atomData in array {
             let atomDataArray = atomData.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }
-            print(atomDataArray)
             if !atomDataArray.isEmpty {
                 if atomDataArray[0] == "ATOM" {
                     let atom = self.getAtom(data: atomDataArray)
                     myLigand.atoms.append(atom)
                 }
                 else if atomDataArray[0] == "CONECT" {
-                    let connect = self.getConnection(data: atomDataArray)
-                    myLigand.connections.append(connect)
+                    let connections = self.getConnection(data: atomDataArray)
+                    myLigand.connections.append(contentsOf: connections)
                 }
                 else {
                     
@@ -43,10 +42,18 @@ class PdbParser {
         return atom
     }
     
-    func getConnection(data: [String]) -> Connection {
-        let connection = Connection()
-//        print(data)
-        return connection
+    func getConnection(data: [String]) -> [Connection] {
+        var connections: [Connection] = []
+        let firstElement = Int(data[1])
+        for (index, element) in data.enumerated() {
+            if index > 1 {
+                var connection = Connection()
+                let elementNumber = Int(element)
+                connection.atoms = (firstElement!, elementNumber!)
+                connections.append(connection)
+            }
+        }
+        return connections
     }
     
     
