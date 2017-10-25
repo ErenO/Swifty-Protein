@@ -95,16 +95,17 @@ class ProteinViewController: UIViewController {
         geometry = SCNCylinder(radius: 0.05, height: distance)
         
         let position = self.getConnectionPosition(connection: connection)           // position: middle between 2 points
-        let geometryNode = SCNNode(geometry: geometry)
-        
-        geometryNode.position = SCNVector3(x: position.0, y: position.1, z: position.2)
-        
-        let rotp = v2 - SCNVector3(x: position.0, y: position.1, z: position.2)
-        
-        let rotx = atan2( rotp.y, rotp.x )
-        geometryNode.eulerAngles = SCNVector3(0, 0, rotx)
-        
-        scnScene.rootNode.addChildNode(geometryNode)
+//        let geometryNode = SCNNode(geometry: geometry)
+//        
+//        geometryNode.position = SCNVector3(x: position.0, y: position.1, z: position.2)
+//        
+//        let rotp = v2 - SCNVector3(x: position.0, y: position.1, z: position.2)
+//        
+//        let rotx = atan2( rotp.y, rotp.x )
+//        geometryNode.eulerAngles = SCNVector3(0, 0, rotx)
+
+        let geometryNode = drawLine([v1, v2], color: UIColor.flatBlue)
+        scnScene.rootNode.addChildNode(geometryNode!)
     }
     
     func getConnectionPosition(connection: Connection) -> (Float, Float, Float) {
@@ -140,5 +141,38 @@ private extension SCNVector3{
             return (distance)
         }
     }
+}
+
+func drawLine(_ verts : [SCNVector3], color : UIColor) -> SCNNode? {
+    
+    if verts.count < 2 { return nil }
+    
+    let src = SCNGeometrySource(vertices: verts, count: verts.count )
+    var indexes: [CInt] = []
+    
+    for i in 0...verts.count - 1 {
+        indexes.append(contentsOf: [CInt(i), CInt(i + 1)])
+    }
+    
+    let dat  = NSData(
+        bytes: indexes,
+        length: MemoryLayout<CInt>.size * indexes.count
+    )
+    
+    let ele = SCNGeometryElement(
+        data: dat as Data,
+        primitiveType: .line,
+        primitiveCount: verts.count - 1,
+        bytesPerIndex: MemoryLayout<CInt>.size
+    )
+    
+    let line = SCNCylinder(sources: [src], elements: [ele])
+    
+    let node = SCNNode(geometry: line)
+    
+    line.materials.first?.lightingModel = .blinn
+    line.materials.first?.diffuse.contents = color
+    
+    return node
 }
     
