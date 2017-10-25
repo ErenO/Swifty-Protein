@@ -16,7 +16,7 @@ class ProteinTableViewController: UIViewController  {
     var proteinList: [String]!
     var filteredData: [String]?
     var isSearching: Bool = false
-    var textSelected: String?
+    var ligandToDisplay: Ligand?
     var networkController: NetworkController!
     
     override func viewDidLoad() {
@@ -33,19 +33,20 @@ class ProteinTableViewController: UIViewController  {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TableToProtein" {
-            if let nbTitle = self.textSelected {
-                networkController.loadPDB(of: nbTitle) { response in
-                    print("callback")
-                    if let vc = segue.destination as? ProteinViewController {
-                        if let myLigand = response as? Ligand {
-                            vc.ligandToDisplay = myLigand
-                        }
-                    }
-                }
+            if let vc = segue.destination as? ProteinViewController {
+                print("setting ligand")
+                vc.ligandToDisplay = self.ligandToDisplay!
             }
         }
     }
     
+    func displayErrorAlert() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: "something went wrong", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
 }
 
@@ -74,8 +75,16 @@ extension ProteinTableViewController:  UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("i selected a row")
-        self.textSelected = self.proteinList[indexPath.row]
-        self.performSegue(withIdentifier: "TableToProtein", sender: nil)
+        let textSelected = self.proteinList[indexPath.row]
+        networkController.loadPDB(of: textSelected) { res in
+            guard let response = res else {
+                self.displayErrorAlert()
+                return
+            }
+            self.ligandToDisplay = response as? Ligand
+            print("callback")
+            self.performSegue(withIdentifier: "TableToProtein", sender: nil)
+        }
     }
 }
 

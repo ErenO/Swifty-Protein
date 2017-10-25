@@ -14,11 +14,7 @@ class ProteinViewController: UIViewController {
     @IBOutlet weak var mySCNView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
-    var ligandToDisplay: Ligand? {
-        didSet {
-            self.spawnAtoms()
-        }
-    }
+    var ligandToDisplay: Ligand?
     
     override func viewDidLoad() {
         super.viewDidLoad()
