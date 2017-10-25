@@ -26,6 +26,9 @@
 		9081FD961F9F556400583A83 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9081FD951F9F556400583A83 /* LocalAuthentication.framework */; };
 		90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB821A1FA07FF70013EB9B /* NetworkController.swift */; };
 		90FB821D1FA0882A0013EB9B /* PdbParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB821C1FA0882A0013EB9B /* PdbParser.swift */; };
+		90FB82221FA08C000013EB9B /* Ligand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB82211FA08C000013EB9B /* Ligand.swift */; };
+		90FB82241FA08C230013EB9B /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB82231FA08C230013EB9B /* Atom.swift */; };
+		90FB82271FA08CA50013EB9B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB82261FA08CA50013EB9B /* Connection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		9081FD951F9F556400583A83 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		90FB821A1FA07FF70013EB9B /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		90FB821C1FA0882A0013EB9B /* PdbParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdbParser.swift; sourceTree = "<group>"; };
+		90FB82211FA08C000013EB9B /* Ligand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ligand.swift; sourceTree = "<group>"; };
+		90FB82231FA08C230013EB9B /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
+		90FB82261FA08CA50013EB9B /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		9C36C9F3FE6291B2CF7294D3 /* Pods-swifty_proteinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_proteinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_proteinUITests/Pods-swifty_proteinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBBFCA25D88E5FC05C50D2A8 /* Pods-swifty_protein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_protein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_protein/Pods-swifty_protein.debug.xcconfig"; sourceTree = "<group>"; };
 		D3952D46E9AE553A6E677004 /* Pods_swifty_proteinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swifty_proteinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +170,7 @@
 				90FB821E1FA088B90013EB9B /* StoryBoards */,
 				90FB821F1FA088F00013EB9B /* Helpers */,
 				74FA50041F9DF2290071B098 /* Assets.xcassets */,
+				90FB82251FA08C2B0013EB9B /* Models */,
 				74FA50061F9DF2290071B098 /* LaunchScreen.storyboard */,
 				74FA50091F9DF2290071B098 /* Info.plist */,
 			);
@@ -223,6 +230,16 @@
 				901F12781F9F8B7400C3DC7E /* ProteinTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		90FB82251FA08C2B0013EB9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				90FB82231FA08C230013EB9B /* Atom.swift */,
+				90FB82211FA08C000013EB9B /* Ligand.swift */,
+				90FB82261FA08CA50013EB9B /* Connection.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,11 +527,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				901F12791F9F8B7400C3DC7E /* ProteinTableViewCell.swift in Sources */,
+				90FB82241FA08C230013EB9B /* Atom.swift in Sources */,
 				901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */,
 				90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */,
 				74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */,
 				901F127D1F9F8C1500C3DC7E /* ProteinViewController.swift in Sources */,
 				74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */,
+				90FB82271FA08CA50013EB9B /* Connection.swift in Sources */,
+				90FB82221FA08C000013EB9B /* Ligand.swift in Sources */,
 				90FB821D1FA0882A0013EB9B /* PdbParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

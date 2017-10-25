@@ -24,10 +24,11 @@ class NetworkController {
     
     func loadPDB(of: String, callback:@escaping ((Any) -> Void)) {
         Alamofire.request(self.getPath(with: of)).responseData(completionHandler: { response in
-            if let statusCode = response.response?.statusCode {
-                print(response.data!)
-                print(String(data: response.data!, encoding: .utf8)!)
-                print(statusCode)
+            if response.response?.statusCode == 200 {
+                let fileData = String(data: response.data!, encoding: .utf8)
+                let myLigand = self.parser.getMyLigand(name: of, data: fileData!)
+                print(myLigand)
+                callback(myLigand)
             }
         })
 
