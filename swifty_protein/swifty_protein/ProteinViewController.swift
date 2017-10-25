@@ -87,15 +87,15 @@ class ProteinViewController: UIViewController {
     
     func spawn(connection: Connection) {
         var geometry:SCNGeometry
-        geometry = SCNCylinder(radius: 0.3, height: 0.2)
-//        let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
+        let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
         let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
+        let v1 = SCNVector3(x: (firstAtom?.x)!, y: (firstAtom?.y)!, z: (firstAtom?.z)!)
         let v2 = SCNVector3(x: (secondAtom?.x)!, y: (secondAtom?.y)!, z: (secondAtom?.z)!)
+        let distance = CGFloat(v1.distance(receiver: v2))
+        geometry = SCNCylinder(radius: 0.05, height: distance)
         
-        let position = self.getConnectionPosition(connection: connection)
+        let position = self.getConnectionPosition(connection: connection)           // position: middle between 2 points
         let geometryNode = SCNNode(geometry: geometry)
-        
-//        let height = CGFloat(v1.distance(v2))
         
         geometryNode.position = SCNVector3(x: position.0, y: position.1, z: position.2)
         
@@ -120,6 +120,7 @@ class ProteinViewController: UIViewController {
         return (x, y, z)
     }
     
+    
 }
 
 func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
@@ -127,7 +128,7 @@ func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 }
 
 private extension SCNVector3{
-    func distance(_ receiver: SCNVector3) -> Float{
+    func distance(receiver:SCNVector3) -> Float{
         let xd = receiver.x - self.x
         let yd = receiver.y - self.y
         let zd = receiver.z - self.z
@@ -140,3 +141,4 @@ private extension SCNVector3{
         }
     }
 }
+    
