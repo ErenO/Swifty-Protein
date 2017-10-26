@@ -21,7 +21,7 @@ class ProteinViewController: UIViewController {
         setupView()
         setupScene()
         setupCamera()
-        spawnAtoms()
+        spawnLigand()
     }
     
     override var shouldAutorotate: Bool {
@@ -50,22 +50,11 @@ class ProteinViewController: UIViewController {
     }
     
     func spawnLigand() {
-        if (self.ligandToDisplay != nil) {
-            for atom in (self.ligandToDisplay?.atoms)! {
+        if let ligand = self.ligandToDisplay {
+            for atom in ligand.atoms {
                 self.spawn(atom: atom)
             }
-            for connection in (self.ligandToDisplay?.connections)! {
-                self.spawn(connection: connection)
-            }
-        }
-    }
-    
-    func spawnAtoms() {
-        if (self.ligandToDisplay != nil) {
-            for atom in (self.ligandToDisplay?.atoms)! {
-                self.spawn(atom: atom)
-            }
-            for connection in (self.ligandToDisplay?.connections)! {
+            for connection in ligand.connections {
                 self.spawn(connection: connection)
             }
         }
