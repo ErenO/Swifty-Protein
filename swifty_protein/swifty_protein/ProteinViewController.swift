@@ -106,6 +106,7 @@ class ProteinViewController: UIViewController {
     }
     
     
+    
 }
 
 func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
