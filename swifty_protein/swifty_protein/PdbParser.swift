@@ -34,7 +34,6 @@ class PdbParser {
                 }
                 else {
                 }
-                print(atomDataArray)
             }
         }
         return myLigand

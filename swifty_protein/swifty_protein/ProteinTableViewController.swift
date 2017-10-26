@@ -75,8 +75,14 @@ extension ProteinTableViewController:  UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("i selected a row")
-        let textSelected = self.proteinList[indexPath.row]
-        networkController.loadPDB(of: textSelected) { res in
+        let textSelected: String?
+        if self.isSearching {
+            textSelected = self.filteredData?[indexPath.row]
+        }
+        else {
+            textSelected = self.proteinList[indexPath.row]
+        }
+        networkController.loadPDB(of: textSelected!) { res in
             guard let response = res else {
                 self.displayErrorAlert()
                 return

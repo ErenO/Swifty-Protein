@@ -45,8 +45,29 @@ class ProteinViewController: UIViewController {
     func setupCamera() {
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3Make(0, 0, 15)
+        let cameraPosition = setCameraPosition()
+        if cameraPosition == nil {
+            cameraNode.position = SCNVector3Make(0, 0, 30)
+        }
+        else {
+            cameraNode.position = cameraPosition!
+        }
         scnScene.rootNode.addChildNode(cameraNode)
+    }
+    
+    func setCameraPosition() -> SCNVector3? {
+        if let ligand = self.ligandToDisplay {
+                if ligand.atoms.count > 0 {
+                    if ligand.atoms[0].x > 10 {
+                        return SCNVector3(ligand.atoms[0].x, ligand.atoms[0].y, ligand.atoms[0].z + 30)
+                    }
+                    return nil            // maybe not a good idea
+                }
+                else {
+                    return nil
+                }
+        }
+        return nil
     }
     
     func spawnLigand() {
@@ -71,25 +92,42 @@ class ProteinViewController: UIViewController {
     }
     
     func spawn(connection: Connection) {
-        var geometry:SCNGeometry
         let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
         let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
         let v1 = SCNVector3(x: (firstAtom?.x)!, y: (firstAtom?.y)!, z: (firstAtom?.z)!)
         let v2 = SCNVector3(x: (secondAtom?.x)!, y: (secondAtom?.y)!, z: (secondAtom?.z)!)
-        let distance = CGFloat(v1.distance(receiver: v2))
+        
+        if (firstAtom?.x == secondAtom?.x && firstAtom?.y == secondAtom?.y) {
+            print("SAME")
+            print(firstAtom?.z)
+            print(secondAtom?.z)
+        }
+        self.generateCylinder(atom1: v1, atom2: v2)
+    }
+    
+    func generateCylinder(atom1: SCNVector3, atom2: SCNVector3) {
+        var geometry:SCNGeometry
+        let distance = CGFloat(atom1.distance(receiver: atom2))
         geometry = SCNCylinder(radius: 0.05, height: distance)
         
-        let position = self.getConnectionPosition(connection: connection)           // position: middle between 2 points
+        let line = SCNNode()
+        line.position = atom1
+        let node1 = SCNNode()
+        node1.position = atom2
+        scnScene.rootNode.addChildNode(node1)
+        
         let geometryNode = SCNNode(geometry: geometry)
+        geometryNode.position.y = Float(distance / 2)
         
-        geometryNode.position = SCNVector3(x: position.0, y: position.1, z: position.2)
+        let zAlign = SCNNode()
         
-        let rotp = v2 - SCNVector3(x: position.0, y: position.1, z: position.2)
+        zAlign.eulerAngles.x = -Float.pi/2
+        zAlign.addChildNode(geometryNode)
         
-        let rotx = atan2( rotp.y, rotp.x )
-        geometryNode.eulerAngles = SCNVector3(0, 0, rotx)
+        line.addChildNode(zAlign)
+        line.constraints = [SCNLookAtConstraint(target: node1)]
         
-        scnScene.rootNode.addChildNode(geometryNode)
+        scnScene.rootNode.addChildNode(line)
     }
     
     func getConnectionPosition(connection: Connection) -> (Float, Float, Float) {
@@ -127,4 +165,4 @@ private extension SCNVector3{
         }
     }
 }
-    
+
