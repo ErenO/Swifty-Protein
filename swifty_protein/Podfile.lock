@@ -4,11 +4,13 @@ PODS:
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - SwiftyJSON (3.1.4)
+  - SWXMLHash (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - SwiftyJSON
+  - SWXMLHash (~> 4.0.0)
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -23,7 +25,8 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SWXMLHash: 6bbc0bf72975a18ceda469fb7d6a886a26d81694
 
-PODFILE CHECKSUM: 3e1606020c9c320e61b31ec402abc96b4bc90901
+PODFILE CHECKSUM: 17d9f94f2a58e7156a285358d32c5f7fa1c11efb
 
 COCOAPODS: 1.2.1

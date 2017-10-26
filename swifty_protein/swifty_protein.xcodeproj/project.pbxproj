@@ -10,6 +10,11 @@
 		0E8F465AA9D5B5054EFC1F35 /* Pods_swifty_proteinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4A2AB81B9986AC8DE992CE /* Pods_swifty_proteinTests.framework */; };
 		47F37687F7B36A60A7440597 /* Pods_swifty_proteinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3952D46E9AE553A6E677004 /* Pods_swifty_proteinUITests.framework */; };
 		565DAEC391A461EF533F9D06 /* Pods_swifty_protein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79534A4BB6F9A6D1BB51B76 /* Pods_swifty_protein.framework */; };
+		74F0D2D91FA20E4D00041438 /* RequestXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0D2D81FA20E4D00041438 /* RequestXML.swift */; };
+		74F0D2DB1FA2230500041438 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0D2DA1FA2230500041438 /* InfoViewController.swift */; };
+		74F0D2DD1FA2232800041438 /* InfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F0D2DC1FA2232800041438 /* InfoStoryboard.storyboard */; };
+		74F0D2DF1FA2281C00041438 /* Infos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0D2DE1FA2281C00041438 /* Infos.swift */; };
+		74F0D2E11FA228D100041438 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0D2E01FA228D100041438 /* XMLParser.swift */; };
 		74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */; };
 		74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */; };
 		74FA50031F9DF2290071B098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FA50011F9DF2290071B098 /* Main.storyboard */; };
@@ -50,6 +55,11 @@
 
 /* Begin PBXFileReference section */
 		4FC939B8967915BE22BE6310 /* Pods-swifty_proteinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_proteinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_proteinTests/Pods-swifty_proteinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		74F0D2D81FA20E4D00041438 /* RequestXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestXML.swift; sourceTree = "<group>"; };
+		74F0D2DA1FA2230500041438 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		74F0D2DC1FA2232800041438 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoStoryboard.storyboard; sourceTree = "<group>"; };
+		74F0D2DE1FA2281C00041438 /* Infos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infos.swift; sourceTree = "<group>"; };
+		74F0D2E01FA228D100041438 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		74FA4FFA1F9DF2290071B098 /* swifty_protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifty_protein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +211,7 @@
 				74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */,
 				901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */,
 				901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */,
+				74F0D2DA1FA2230500041438 /* InfoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 				74FA50011F9DF2290071B098 /* Main.storyboard */,
 				901F12761F9F8AF000C3DC7E /* ProteinTable.storyboard */,
 				901F127A1F9F8BDA00C3DC7E /* Protein.storyboard */,
+				74F0D2DC1FA2232800041438 /* InfoStoryboard.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -220,6 +232,8 @@
 			children = (
 				90FB821A1FA07FF70013EB9B /* NetworkController.swift */,
 				90FB821C1FA0882A0013EB9B /* PdbParser.swift */,
+				74F0D2D81FA20E4D00041438 /* RequestXML.swift */,
+				74F0D2E01FA228D100041438 /* XMLParser.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 				90FB82231FA08C230013EB9B /* Atom.swift */,
 				90FB82211FA08C000013EB9B /* Ligand.swift */,
 				90FB82261FA08CA50013EB9B /* Connection.swift */,
+				74F0D2DE1FA2281C00041438 /* Infos.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -359,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				901F127B1F9F8BDA00C3DC7E /* Protein.storyboard in Resources */,
+				74F0D2DD1FA2232800041438 /* InfoStoryboard.storyboard in Resources */,
 				901F12811F9F8EE800C3DC7E /* ligands.txt in Resources */,
 				74FA50081F9DF2290071B098 /* LaunchScreen.storyboard in Resources */,
 				74FA50051F9DF2290071B098 /* Assets.xcassets in Resources */,
@@ -527,14 +543,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				901F12791F9F8B7400C3DC7E /* ProteinTableViewCell.swift in Sources */,
+				74F0D2D91FA20E4D00041438 /* RequestXML.swift in Sources */,
 				90FB82241FA08C230013EB9B /* Atom.swift in Sources */,
 				901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */,
 				90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */,
 				74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */,
 				901F127D1F9F8C1500C3DC7E /* ProteinViewController.swift in Sources */,
+				74F0D2DF1FA2281C00041438 /* Infos.swift in Sources */,
 				74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */,
+				74F0D2E11FA228D100041438 /* XMLParser.swift in Sources */,
 				90FB82271FA08CA50013EB9B /* Connection.swift in Sources */,
 				90FB82221FA08C000013EB9B /* Ligand.swift in Sources */,
+				74F0D2DB1FA2230500041438 /* InfoViewController.swift in Sources */,
 				90FB821D1FA0882A0013EB9B /* PdbParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

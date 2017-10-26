@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,12 +26,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-pk-8h1">
+                                <rect key="frame" x="313" y="617" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="bTI-tP-n2u"/>
+                                    <constraint firstAttribute="height" constant="30" id="qFW-Lj-phF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="InfoBtn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="xXs-lj-XA5"/>
+                                    <segue destination="dlB-75-Ddb" kind="show" identifier="ProteinToInfo" id="pOS-Kf-ZBn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="Ue3-pk-8h1" secondAttribute="bottom" constant="20" id="8sP-Qd-EqV"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="IoQ-0M-dEv"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="91u-IP-U1D" secondAttribute="bottom" id="g7L-hc-HAT"/>
                             <constraint firstAttribute="trailing" secondItem="91u-IP-U1D" secondAttribute="trailing" id="jGa-9c-1Aw"/>
+                            <constraint firstItem="Ue3-pk-8h1" firstAttribute="trailing" secondItem="aCU-O5-IPQ" secondAttribute="trailingMargin" id="sCx-m2-L2s"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="aCU-O5-IPQ" secondAttribute="top" id="xou-mG-rlE"/>
                         </constraints>
                     </view>
@@ -41,6 +56,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDt-MB-xkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="112.89355322338831"/>
+        </scene>
+        <!--InfoViewController-->
+        <scene sceneID="YPT-n5-I1g">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="InfoView" storyboardName="InfoStoryboard" referencedIdentifier="InfoViewController" id="dlB-75-Ddb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTv-1o-3en" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="114"/>
         </scene>
     </scenes>
 </document>

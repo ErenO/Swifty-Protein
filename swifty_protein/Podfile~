@@ -7,7 +7,6 @@ target 'swifty_protein' do
     pod 'Alamofire', '~> 4.3'
 	pod 'SwiftyJSON'
 	pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-	pod 'SWXMLHash', '~> 4.0.0'
   # Pods for swifty_protein
 
   target 'swifty_proteinTests' do

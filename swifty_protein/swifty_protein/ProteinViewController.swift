@@ -19,6 +19,7 @@ class ProteinViewController: UIViewController {
             self.spawnAtoms()
         }
     }
+    var protName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,9 +120,18 @@ class ProteinViewController: UIViewController {
         let z = (first.z + second.z) / 2
         return (x, y, z)
     }
+    @IBAction func InfoBtn(_ sender: Any) {
+        performSegue(withIdentifier: "ProteinToInfo", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProteinToInfo" {
+            
+        }
+    }
     
 }
+
 
 func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
     return SCNVector3Make(left.x - right.x, left.y - right.y, left.z - right.z)
