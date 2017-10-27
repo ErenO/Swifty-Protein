@@ -25,12 +25,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-Xw-2WS">
+                                <rect key="frame" x="13" y="72" width="25" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="SzN-3v-VcN"/>
+                                    <constraint firstAttribute="width" constant="25" id="aJR-eJ-Shd"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="arrow-turn"/>
+                                <connections>
+                                    <action selector="toggleLigandTurn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="rZb-r0-xpE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="IoQ-0M-dEv"/>
+                            <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="3VH-Xw-2WS" secondAttribute="bottom" constant="-92" id="Ta2-vg-55C"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="91u-IP-U1D" secondAttribute="bottom" id="g7L-hc-HAT"/>
                             <constraint firstAttribute="trailing" secondItem="91u-IP-U1D" secondAttribute="trailing" id="jGa-9c-1Aw"/>
+                            <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="3VH-Xw-2WS" secondAttribute="trailing" constant="-38" id="len-uf-3qt"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="aCU-O5-IPQ" secondAttribute="top" id="xou-mG-rlE"/>
                         </constraints>
                     </view>
@@ -43,4 +56,7 @@
             <point key="canvasLocation" x="140" y="112.89355322338831"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow-turn" width="256" height="256"/>
+    </resources>
 </document>

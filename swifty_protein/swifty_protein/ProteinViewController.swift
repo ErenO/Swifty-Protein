@@ -33,4 +33,13 @@ class ProteinViewController: UIViewController {
         return true
     }
     
+    @IBAction func toggleLigandTurn(_ sender: Any) {
+        print("toggle")
+        sceneController.toggleRotate()
+    }
+    
+    func shareLigand() {
+        print("sharing")
+    }
+    
 }

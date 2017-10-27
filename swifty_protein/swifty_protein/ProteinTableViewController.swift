@@ -36,6 +36,7 @@ class ProteinTableViewController: UIViewController  {
             if let vc = segue.destination as? ProteinViewController {
                 print("setting ligand")
                 vc.ligandToDisplay = self.ligandToDisplay!
+                vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .done, target: vc, action: #selector(vc.shareLigand))
             }
         }
     }

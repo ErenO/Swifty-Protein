@@ -162,4 +162,15 @@ class SceneController {
         scnScene.rootNode.addChildNode(line)
     }
     
+    func toggleRotate() {
+        if self.scnScene.rootNode.actionKeys.contains("rotate") {
+            print("going to remove action")
+            self.scnScene.rootNode.removeAction(forKey: "rotate")
+        }
+        else {
+            let action = SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 20, z: 0, duration: 30))
+            self.scnScene.rootNode.runAction(action, forKey: "rotate")
+        }
+    }
+    
 }
