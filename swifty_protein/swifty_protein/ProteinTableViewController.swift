@@ -75,6 +75,7 @@ extension ProteinTableViewController:  UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("i selected a row")
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let textSelected: String?
         if self.isSearching {
             textSelected = self.filteredData?[indexPath.row]
@@ -85,6 +86,7 @@ extension ProteinTableViewController:  UITableViewDelegate, UITableViewDataSourc
         networkController.loadPDB(of: textSelected!) { res in
             guard let response = res else {
                 self.displayErrorAlert()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 return
             }
             self.ligandToDisplay = response as? Ligand

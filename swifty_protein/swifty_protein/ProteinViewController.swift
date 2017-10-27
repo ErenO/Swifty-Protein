@@ -22,6 +22,7 @@ class ProteinViewController: UIViewController {
         sceneController = SceneController(scnView: mySCNView)
         sceneController.set(ligand: self.ligandToDisplay!)
         sceneController.displayLigand()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
     override var shouldAutorotate: Bool {
