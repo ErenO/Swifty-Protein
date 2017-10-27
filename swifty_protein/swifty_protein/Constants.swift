@@ -18,6 +18,7 @@ struct Contants {
         static let y: Float = -(Float)(Contants.atomRadius)
         static let z: Float =  (Float)(Contants.atomRadius)
     }
+    static let personalizedMessage = "Hey!, take a look at this Ligand number "
 }
 
 struct URLS {

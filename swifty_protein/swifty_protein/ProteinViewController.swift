@@ -41,9 +41,9 @@ class ProteinViewController: UIViewController {
     func shareLigand() {
         print("sharing")
         let imageToShare = self.mySCNView.snapshot()
-        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [(imageToShare), "asdf"], applicationActivities: nil)
+        let messageToShare = Contants.personalizedMessage + self.ligandToDisplay.name
+        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [(imageToShare), messageToShare], applicationActivities: nil)
         self.present(shareVC, animated: true, completion: nil)
-        
     }
     
 }
