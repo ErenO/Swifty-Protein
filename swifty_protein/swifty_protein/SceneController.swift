@@ -128,7 +128,7 @@ class SceneController {
         let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
         let v1 = SCNVector3(x: (firstAtom?.x)!, y: (firstAtom?.y)!, z: (firstAtom?.z)!)
         let v2 = SCNVector3(x: (secondAtom?.x)!, y: (secondAtom?.y)!, z: (secondAtom?.z)!)
-        
+        // THIS IS TO SOLVE the 041 Problem (maybe)
         //        if (firstAtom?.x == secondAtom?.x && firstAtom?.y == secondAtom?.y) {
         //            print("SAME")
         //            print(firstAtom?.z)
