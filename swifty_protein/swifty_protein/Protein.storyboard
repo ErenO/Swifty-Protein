@@ -36,13 +36,24 @@
                                     <action selector="toggleLigandTurn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="rZb-r0-xpE"/>
                                 </connections>
                             </button>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJS-3Q-X3t">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="fvO-HI-z2g"/>
+                                    <tabBarItem systemItem="more" id="yK3-T0-oyS"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HJS-3Q-X3t" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="7QE-NI-jHf"/>
+                            <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="HJS-3Q-X3t" secondAttribute="bottom" id="FaV-n3-jKP"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="IoQ-0M-dEv"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="3VH-Xw-2WS" secondAttribute="bottom" constant="-92" id="Ta2-vg-55C"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="91u-IP-U1D" secondAttribute="bottom" id="g7L-hc-HAT"/>
                             <constraint firstAttribute="trailing" secondItem="91u-IP-U1D" secondAttribute="trailing" id="jGa-9c-1Aw"/>
+                            <constraint firstAttribute="trailing" secondItem="HJS-3Q-X3t" secondAttribute="trailing" id="lNd-wh-KHq"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="3VH-Xw-2WS" secondAttribute="trailing" constant="-38" id="len-uf-3qt"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="aCU-O5-IPQ" secondAttribute="top" id="xou-mG-rlE"/>
                         </constraints>

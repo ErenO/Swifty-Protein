@@ -17,6 +17,7 @@ class PdbParser {
             let atomDataArray = atomData.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }
             if !atomDataArray.isEmpty {
                 if atomDataArray[0] == "ATOM" {
+                    print(atomDataArray)
                     if let atom = self.getAtom(data: atomDataArray) {
                         myLigand.atoms.append(atom)
                     }

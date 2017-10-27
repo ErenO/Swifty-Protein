@@ -94,6 +94,7 @@ class SceneController {
     }
     
     func setupText(tappedNode: SCNNode){
+        
         let textNode = SCNNode()
         let text = SCNText(string: tappedNode.name, extrusionDepth: 1)
         textNode.geometry = text
@@ -126,14 +127,14 @@ class SceneController {
     func spawn(connection: Connection) {
         let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
         let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
-        let v1 = SCNVector3(x: (firstAtom?.x)!, y: (firstAtom?.y)!, z: (firstAtom?.z)!)
-        let v2 = SCNVector3(x: (secondAtom?.x)!, y: (secondAtom?.y)!, z: (secondAtom?.z)!)
+        var v1 = SCNVector3(x: (firstAtom?.x)!, y: (firstAtom?.y)!, z: (firstAtom?.z)!)
+        var v2 = SCNVector3(x: (secondAtom?.x)!, y: (secondAtom?.y)!, z: (secondAtom?.z)!)
         // THIS IS TO SOLVE the 041 Problem (maybe)
-        //        if (firstAtom?.x == secondAtom?.x && firstAtom?.y == secondAtom?.y) {
-        //            print("SAME")
-        //            print(firstAtom?.z)
-        //            print(secondAtom?!.z)
-        //        }
+        if (firstAtom?.x == secondAtom?.x && firstAtom?.y == secondAtom?.y) {
+            if firstAtom!.z < secondAtom!.z {
+                swap(&v1, &v2) // trick to fix bug ....
+            }
+        }
         self.generateCylinder(atom1: v1, atom2: v2)
     }
     
