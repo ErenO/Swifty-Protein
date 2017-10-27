@@ -339,6 +339,7 @@
 				TargetAttributes = {
 					74FA4FF91F9DF2290071B098 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9U8HD2VN5G;
 						ProvisioningStyle = Automatic;
 					};
 					74FA500D1F9DF2290071B098 = {
@@ -714,6 +715,7 @@
 			baseConfigurationReference = CBBFCA25D88E5FC05C50D2A8 /* Pods-swifty_protein.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9U8HD2VN5G;
 				INFOPLIST_FILE = swifty_protein/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "guzman-ozdek.swifty-protein";
@@ -727,6 +729,7 @@
 			baseConfigurationReference = DB7D3847A5BD5A7C03232B4D /* Pods-swifty_protein.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9U8HD2VN5G;
 				INFOPLIST_FILE = swifty_protein/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "guzman-ozdek.swifty-protein";
