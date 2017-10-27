@@ -24,6 +24,7 @@
 		901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */; };
 		901F12811F9F8EE800C3DC7E /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 901F12801F9F8EE800C3DC7E /* ligands.txt */; };
 		9081FD961F9F556400583A83 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9081FD951F9F556400583A83 /* LocalAuthentication.framework */; };
+		90CE33C41FA3141B005C38AF /* SceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE33C31FA3141B005C38AF /* SceneController.swift */; };
 		90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB821A1FA07FF70013EB9B /* NetworkController.swift */; };
 		90FB821D1FA0882A0013EB9B /* PdbParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB821C1FA0882A0013EB9B /* PdbParser.swift */; };
 		90FB82221FA08C000013EB9B /* Ligand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB82211FA08C000013EB9B /* Ligand.swift */; };
@@ -71,6 +72,7 @@
 		901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinTableViewController.swift; sourceTree = "<group>"; };
 		901F12801F9F8EE800C3DC7E /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = SOURCE_ROOT; };
 		9081FD951F9F556400583A83 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		90CE33C31FA3141B005C38AF /* SceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneController.swift; sourceTree = "<group>"; };
 		90FB821A1FA07FF70013EB9B /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		90FB821C1FA0882A0013EB9B /* PdbParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdbParser.swift; sourceTree = "<group>"; };
 		90FB82211FA08C000013EB9B /* Ligand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ligand.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				90FB821A1FA07FF70013EB9B /* NetworkController.swift */,
 				90FB821C1FA0882A0013EB9B /* PdbParser.swift */,
+				90CE33C31FA3141B005C38AF /* SceneController.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			files = (
 				901F12791F9F8B7400C3DC7E /* ProteinTableViewCell.swift in Sources */,
 				90FB82241FA08C230013EB9B /* Atom.swift in Sources */,
+				90CE33C41FA3141B005C38AF /* SceneController.swift in Sources */,
 				901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */,
 				90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */,
 				74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */,
