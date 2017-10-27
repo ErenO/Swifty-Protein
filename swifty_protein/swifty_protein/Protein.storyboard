@@ -40,9 +40,12 @@
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="fvO-HI-z2g"/>
-                                    <tabBarItem systemItem="more" id="yK3-T0-oyS"/>
+                                    <tabBarItem title="Balls and Sticks" id="fvO-HI-z2g"/>
+                                    <tabBarItem title="AnotherModel" id="yK3-T0-oyS"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="UYB-IL-ehY" id="Kh2-VB-Cnf"/>
+                                </connections>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,6 +63,7 @@
                     </view>
                     <connections>
                         <outlet property="mySCNView" destination="91u-IP-U1D" id="Euk-LM-uNP"/>
+                        <outlet property="tabBar" destination="HJS-3Q-X3t" id="cyL-hm-Pe8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDt-MB-xkL" userLabel="First Responder" sceneMemberID="firstResponder"/>

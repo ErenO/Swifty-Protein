@@ -103,7 +103,7 @@ class SceneController {
         tappedNode.addChildNode(textNode)
     }
     
-    func displayLigand() {
+    func displayBallsAndSticks() {
         if let ligand = self.ligandToDisplay {
             for atom in ligand.atoms {
                 self.spawn(atom: atom)
