@@ -43,7 +43,7 @@ class SceneController {
         let cameraPosition = setCameraPosition()
         
         if cameraPosition == nil {
-            self.cameraNode.position = SCNVector3Make(0, 0, 30)
+            self.cameraNode.position = SCNVector3Make(0, 0, Contants.cameraPositionZ)
         }
         else {
             self.cameraNode.position = cameraPosition!
@@ -55,7 +55,7 @@ class SceneController {
         if let ligand = self.ligandToDisplay {
             if ligand.atoms.count > 0 {
                 if ligand.atoms[0].x > 10 {
-                    return SCNVector3(ligand.atoms[0].x, ligand.atoms[0].y, ligand.atoms[0].z + 30)
+                    return SCNVector3(ligand.atoms[0].x, ligand.atoms[0].y, ligand.atoms[0].z + Contants.cameraPositionZ)
                 }
                 return nil            // maybe not a good idea
             }
@@ -95,10 +95,10 @@ class SceneController {
     
     func setupText(tappedNode: SCNNode){
         let textNode = SCNNode()
-        let text = SCNText(string: tappedNode.name, extrusionDepth: 2)
+        let text = SCNText(string: tappedNode.name, extrusionDepth: 1)
         textNode.geometry = text
-        textNode.scale = SCNVector3(0.04, 0.04, 0.04)
-        textNode.position = SCNVector3Make(0, 0, 0)
+        textNode.scale = SCNVector3(Contants.textScale, Contants.textScale, Contants.textScale)
+        textNode.position = SCNVector3Make(Contants.textPosition.x, Contants.textPosition.y, Contants.textPosition.z)
         tappedNode.addChildNode(textNode)
     }
     
@@ -115,8 +115,8 @@ class SceneController {
     
     func spawn(atom: Atom) {
         var geometry:SCNGeometry
-        geometry = SCNSphere(radius: 0.1)
-        
+        geometry = SCNSphere(radius: Contants.atomRadius)
+        geometry.firstMaterial?.diffuse.contents = UIColor.CPKColors[atom.element]
         let geometryNode = SCNNode(geometry: geometry)
         geometryNode.position = SCNVector3(x: atom.x, y: atom.y, z: atom.z)
         geometryNode.name = atom.elementAndNumber
@@ -140,7 +140,7 @@ class SceneController {
     func generateCylinder(atom1: SCNVector3, atom2: SCNVector3) {
         var geometry:SCNGeometry
         let distance = CGFloat(atom1.distance(receiver: atom2))
-        geometry = SCNCylinder(radius: 0.05, height: distance)
+        geometry = SCNCylinder(radius: Contants.conectorRadius, height: distance)
         
         let line = SCNNode()
         line.position = atom1
@@ -163,24 +163,3 @@ class SceneController {
     }
     
 }
-
-
-func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
-    return SCNVector3Make(left.x - right.x, left.y - right.y, left.z - right.z)
-}
-
-private extension SCNVector3{
-    func distance(receiver:SCNVector3) -> Float{
-        let xd = receiver.x - self.x
-        let yd = receiver.y - self.y
-        let zd = receiver.z - self.z
-        let distance = Float(sqrt(xd * xd + yd * yd + zd * zd))
-        
-        if (distance < 0){
-            return (distance * -1)
-        } else {
-            return (distance)
-        }
-    }
-}
-

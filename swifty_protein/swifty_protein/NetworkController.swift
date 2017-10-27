@@ -9,12 +9,6 @@
 import Foundation
 import Alamofire
 
-struct URLS {
-    static let pdb = "http://ligand-expo.rcsb.org/reports/"
-    static let pdbIdeal = "_ideal.pdb"
-    static let pdbModel = "_model.pdb"
-}
-
 class NetworkController {
     var defaultExtension = URLS.pdbIdeal
     var parser: PdbParser!
