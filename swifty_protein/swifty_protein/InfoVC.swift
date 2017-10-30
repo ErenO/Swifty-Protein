@@ -26,12 +26,20 @@ class InfoVC: UIViewController {
     func display() {
         loadXML(of: nbTitle) { response in
             print("callback")
-            print(response)
-            response
+            //            print(response)
+            let xml = SWXMLHash.config {
+                config in
+                config.shouldProcessLazily = true
+                }.parse(response as! String)
+            //            let xml = SWXMLHash.lazy(response)
+            print(xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text ?? "Req not succeed")
+            print(xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula_weight"].element?.text ?? "Req not succeed")
+            print(xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:type"].element?.text ?? "Req not succeed")
+            print(xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula"].element?.text ?? "Req not succeed")
+            print(xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text ?? "Req not succeed")
+            
         }
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,7 +61,6 @@ class InfoVC: UIViewController {
         //            let firstLetter = String(with.characters.prefix(1))
         return "http://files.rcsb.org/ligands/view/033.xml"
     }
-    
 
     /*
     // MARK: - Navigation
@@ -66,49 +73,6 @@ class InfoVC: UIViewController {
     */
 
 }
-/*
-//    var reqXML = RequestXML!
-var protInfo: Infos!
-var nbTitle = "033"
 
-override func viewDidLoad() {
-    super.viewDidLoad()
-    //        reqXML = RequestXML()
-    // Do any additional setup after loading the view.
-    display()
-}
 
-func display() {
-    loadXML(of: nbTitle) { response in
-        print("callback")
-        //            print(response)
-        let xml = SWXMLHash.config {
-            config in
-            config.shouldProcessLazily = true
-            }.parse(response as! String)
-        //            let xml = SWXMLHash.lazy(response)
-        print(xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text ?? "merde")
-    }
-}
-
-override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-}
-
-func loadXML(of: String, callback:@escaping ((Any) -> Void)) {
-    Alamofire.request(self.getPath(with: of)).responseData(completionHandler: { response in
-        if response.response?.statusCode == 200 {
-            let fileData = String(data: response.data!, encoding: .utf8)
-            //                    let myLigand = self.parser.getInfo(name: of, data: fileData!)
-            callback(fileData!)
-        }
-    })
     
-}
-
-func getPath(with: String) -> String {
-    //            let firstLetter = String(with.characters.prefix(1))
-    return "http://files.rcsb.org/ligands/view/033.xml"
-}
-    */
