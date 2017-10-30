@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,13 +45,26 @@
                                     <tabBarItem systemItem="more" id="yK3-T0-oyS"/>
                                 </items>
                             </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-Sf-G1o">
+                                <rect key="frame" x="313" y="570" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Ly-RD-fn6"/>
+                                    <constraint firstAttribute="width" constant="46" id="ZWB-oW-pat"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="InfoBtn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="Nke-Eb-W64"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HJS-3Q-X3t" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="7QE-NI-jHf"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="HJS-3Q-X3t" secondAttribute="bottom" id="FaV-n3-jKP"/>
+                            <constraint firstItem="HJS-3Q-X3t" firstAttribute="top" secondItem="CZ3-Sf-G1o" secondAttribute="bottom" constant="18" id="HRj-oP-pdU"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="IoQ-0M-dEv"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="3VH-Xw-2WS" secondAttribute="bottom" constant="-92" id="Ta2-vg-55C"/>
+                            <constraint firstItem="CZ3-Sf-G1o" firstAttribute="trailing" secondItem="aCU-O5-IPQ" secondAttribute="trailingMargin" id="Y9Q-l0-c84"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="91u-IP-U1D" secondAttribute="bottom" id="g7L-hc-HAT"/>
                             <constraint firstAttribute="trailing" secondItem="91u-IP-U1D" secondAttribute="trailing" id="jGa-9c-1Aw"/>
                             <constraint firstAttribute="trailing" secondItem="HJS-3Q-X3t" secondAttribute="trailing" id="lNd-wh-KHq"/>
@@ -60,11 +74,20 @@
                     </view>
                     <connections>
                         <outlet property="mySCNView" destination="91u-IP-U1D" id="Euk-LM-uNP"/>
+                        <segue destination="dCT-E4-MbQ" kind="show" identifier="ProtToInfo" id="XI3-ZY-qlF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDt-MB-xkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="112.89355322338831"/>
+            <point key="canvasLocation" x="127" y="125"/>
+        </scene>
+        <!--InfoVC-->
+        <scene sceneID="uHw-v2-gRR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Info" referencedIdentifier="InfoVC" id="dCT-E4-MbQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ly5-lu-Z2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="125"/>
         </scene>
     </scenes>
     <resources>

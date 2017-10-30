@@ -25,4 +25,6 @@ struct URLS {
     static let pdb = "http://ligand-expo.rcsb.org/reports/"
     static let pdbIdeal = "_ideal.pdb"
     static let pdbModel = "_model.pdb"
+    static let xml = "http://files.rcsb.org/ligands/view/"
+    static let xmlExt = ".xml"
 }

@@ -10,6 +10,10 @@
 		0E8F465AA9D5B5054EFC1F35 /* Pods_swifty_proteinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4A2AB81B9986AC8DE992CE /* Pods_swifty_proteinTests.framework */; };
 		47F37687F7B36A60A7440597 /* Pods_swifty_proteinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3952D46E9AE553A6E677004 /* Pods_swifty_proteinUITests.framework */; };
 		565DAEC391A461EF533F9D06 /* Pods_swifty_protein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79534A4BB6F9A6D1BB51B76 /* Pods_swifty_protein.framework */; };
+		741FE4971FA762B1005FD843 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FE4961FA762B1005FD843 /* Info.storyboard */; };
+		741FE4991FA7650A005FD843 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741FE4981FA7650A005FD843 /* InfoVC.swift */; };
+		741FE49B1FA76D82005FD843 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741FE49A1FA76D82005FD843 /* XMLParser.swift */; };
+		741FE49D1FA76DB5005FD843 /* InfoReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741FE49C1FA76DB5005FD843 /* InfoReq.swift */; };
 		74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */; };
 		74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */; };
 		74FA50031F9DF2290071B098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FA50011F9DF2290071B098 /* Main.storyboard */; };
@@ -54,6 +58,10 @@
 
 /* Begin PBXFileReference section */
 		4FC939B8967915BE22BE6310 /* Pods-swifty_proteinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_proteinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_proteinTests/Pods-swifty_proteinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		741FE4961FA762B1005FD843 /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		741FE4981FA7650A005FD843 /* InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		741FE49A1FA76D82005FD843 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		741FE49C1FA76DB5005FD843 /* InfoReq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoReq.swift; sourceTree = "<group>"; };
 		74FA4FFA1F9DF2290071B098 /* swifty_protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifty_protein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FA4FFD1F9DF2290071B098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +219,7 @@
 				74FA4FFF1F9DF2290071B098 /* LoginViewController.swift */,
 				901F127E1F9F8C7600C3DC7E /* ProteinTableViewController.swift */,
 				901F127C1F9F8C1500C3DC7E /* ProteinViewController.swift */,
+				741FE4981FA7650A005FD843 /* InfoVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +239,7 @@
 				74FA50011F9DF2290071B098 /* Main.storyboard */,
 				901F12761F9F8AF000C3DC7E /* ProteinTable.storyboard */,
 				901F127A1F9F8BDA00C3DC7E /* Protein.storyboard */,
+				741FE4961FA762B1005FD843 /* Info.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -240,6 +250,8 @@
 				90FB821A1FA07FF70013EB9B /* NetworkController.swift */,
 				90FB821C1FA0882A0013EB9B /* PdbParser.swift */,
 				90CE33C31FA3141B005C38AF /* SceneController.swift */,
+				741FE49A1FA76D82005FD843 /* XMLParser.swift */,
+				741FE49C1FA76DB5005FD843 /* InfoReq.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -380,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				901F127B1F9F8BDA00C3DC7E /* Protein.storyboard in Resources */,
+				741FE4971FA762B1005FD843 /* Info.storyboard in Resources */,
 				901F12811F9F8EE800C3DC7E /* ligands.txt in Resources */,
 				74FA50081F9DF2290071B098 /* LaunchScreen.storyboard in Resources */,
 				74FA50051F9DF2290071B098 /* Assets.xcassets in Resources */,
@@ -551,9 +564,12 @@
 				90FB82241FA08C230013EB9B /* Atom.swift in Sources */,
 				90CE33C41FA3141B005C38AF /* SceneController.swift in Sources */,
 				901F127F1F9F8C7600C3DC7E /* ProteinTableViewController.swift in Sources */,
+				741FE49D1FA76DB5005FD843 /* InfoReq.swift in Sources */,
+				741FE4991FA7650A005FD843 /* InfoVC.swift in Sources */,
 				90FB821B1FA07FF70013EB9B /* NetworkController.swift in Sources */,
 				74FA50001F9DF2290071B098 /* LoginViewController.swift in Sources */,
 				90CE33CB1FA33C7B005C38AF /* SCNNodeExtension.swift in Sources */,
+				741FE49B1FA76D82005FD843 /* XMLParser.swift in Sources */,
 				901F127D1F9F8C1500C3DC7E /* ProteinViewController.swift in Sources */,
 				90CE33C91FA339A8005C38AF /* Constants.swift in Sources */,
 				74FA4FFE1F9DF2290071B098 /* AppDelegate.swift in Sources */,

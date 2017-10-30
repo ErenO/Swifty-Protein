@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 
+
 class ProteinViewController: UIViewController {
     
     @IBOutlet weak var mySCNView: SCNView!
@@ -44,6 +45,17 @@ class ProteinViewController: UIViewController {
         let messageToShare = Contants.personalizedMessage + (self.ligandToDisplay?.name)!
         let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [(imageToShare), messageToShare], applicationActivities: nil)
         self.present(shareVC, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func InfoBtn(_ sender: Any) {
+        performSegue(withIdentifier: "ProtToInfo", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProtToInfo" {
+            
+        }
     }
     
 }
