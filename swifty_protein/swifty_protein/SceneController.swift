@@ -10,6 +10,10 @@ import Foundation
 import SceneKit
 
 class SceneController {
+    /*
+     ** Merci pour les commentaires
+     */
+    
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
@@ -34,6 +38,7 @@ class SceneController {
     func setupScene() {
         scnScene = SCNScene()
         self.scnView.scene = scnScene
+//        self.scnView.backgroundColor = UIColor.white
     }
     
     func setupCamera() {
@@ -78,8 +83,12 @@ class SceneController {
             if let tappedNode = hits.first?.node {
                 if tappedNode.childNodes.count > 0 {
                     tappedNode.childNodes[0].removeFromParentNode()
-                }
-                else {
+                } else {
+                    for node in scnScene.rootNode.childNodes {
+                        if node.name != nil, node.childNodes.count > 0 {
+                            node.childNodes[0].removeFromParentNode()
+                        }
+                    }
                     self.setupText(tappedNode: tappedNode)
                 }
             }
@@ -93,13 +102,17 @@ class SceneController {
         }
     }
     
+    
     func setupText(tappedNode: SCNNode){
         
         let textNode = SCNNode()
         let text = SCNText(string: tappedNode.name, extrusionDepth: 1)
+        
         textNode.geometry = text
         textNode.scale = SCNVector3(Contants.textScale, Contants.textScale, Contants.textScale)
         textNode.position = SCNVector3Make(Contants.textPosition.x, Contants.textPosition.y, Contants.textPosition.z)
+        print("\(Contants.textPosition.x)  \(Contants.textPosition.y) \(Contants.textPosition.z)")
+//        textNode.position = SCNVector3Make(10, 10, 10)
         tappedNode.addChildNode(textNode)
     }
     
@@ -116,19 +129,26 @@ class SceneController {
     
     func spawn(atom: Atom) {
         var geometry:SCNGeometry
+        
+        
         geometry = SCNSphere(radius: Contants.atomRadius)
         geometry.firstMaterial?.diffuse.contents = UIColor.CPKColors[atom.element]
+       
         let geometryNode = SCNNode(geometry: geometry)
+        
         geometryNode.position = SCNVector3(x: atom.x, y: atom.y, z: atom.z)
         geometryNode.name = atom.elementAndNumber
+        
         scnScene.rootNode.addChildNode(geometryNode)
     }
     
     func spawn(connection: Connection) {
         let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
         let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
+        
         var v1 = SCNVector3(x: (firstAtom?.x)!, y: (firstAtom?.y)!, z: (firstAtom?.z)!)
         var v2 = SCNVector3(x: (secondAtom?.x)!, y: (secondAtom?.y)!, z: (secondAtom?.z)!)
+        
         // THIS IS TO SOLVE the 041 Problem (maybe)
         if (firstAtom?.x == secondAtom?.x && firstAtom?.y == secondAtom?.y) {
             if firstAtom!.z < secondAtom!.z {
@@ -164,11 +184,11 @@ class SceneController {
     }
     
     func toggleRotate() {
+        
         if self.scnScene.rootNode.actionKeys.contains("rotate") {
             print("going to remove action")
             self.scnScene.rootNode.removeAction(forKey: "rotate")
-        }
-        else {
+        } else {
             let action = SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 20, z: 0, duration: 30))
             self.scnScene.rootNode.runAction(action, forKey: "rotate")
         }

@@ -32,26 +32,25 @@
                                     <constraint firstAttribute="height" constant="20" id="SzN-3v-VcN"/>
                                     <constraint firstAttribute="width" constant="25" id="aJR-eJ-Shd"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="arrow-turn"/>
+                                <state key="normal" title="Button" image="noun_35458"/>
                                 <connections>
                                     <action selector="toggleLigandTurn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="rZb-r0-xpE"/>
                                 </connections>
                             </button>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJS-3Q-X3t">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="fvO-HI-z2g"/>
-                                    <tabBarItem systemItem="more" id="yK3-T0-oyS"/>
-                                </items>
-                            </tabBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="czg-Ym-PO6">
+                                <rect key="frame" x="46" y="608" width="283" height="29"/>
+                                <segments>
+                                    <segment title="Balls &amp; sticks"/>
+                                    <segment title="Space-filling"/>
+                                </segments>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-Sf-G1o">
-                                <rect key="frame" x="313" y="570" width="46" height="30"/>
+                                <rect key="frame" x="136" y="562" width="102" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1Ly-RD-fn6"/>
-                                    <constraint firstAttribute="width" constant="46" id="ZWB-oW-pat"/>
+                                    <constraint firstAttribute="height" constant="30" id="xek-Gk-tHx"/>
+                                    <constraint firstAttribute="width" constant="102" id="zI4-2a-3SB"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="More Infos"/>
                                 <connections>
                                     <action selector="InfoBtn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="Nke-Eb-W64"/>
                                 </connections>
@@ -59,16 +58,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HJS-3Q-X3t" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="7QE-NI-jHf"/>
-                            <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="HJS-3Q-X3t" secondAttribute="bottom" id="FaV-n3-jKP"/>
-                            <constraint firstItem="HJS-3Q-X3t" firstAttribute="top" secondItem="CZ3-Sf-G1o" secondAttribute="bottom" constant="18" id="HRj-oP-pdU"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="IoQ-0M-dEv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="czg-Ym-PO6" secondAttribute="trailing" constant="30" id="QtA-lb-YPz"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="3VH-Xw-2WS" secondAttribute="bottom" constant="-92" id="Ta2-vg-55C"/>
-                            <constraint firstItem="CZ3-Sf-G1o" firstAttribute="trailing" secondItem="aCU-O5-IPQ" secondAttribute="trailingMargin" id="Y9Q-l0-c84"/>
+                            <constraint firstItem="czg-Ym-PO6" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leadingMargin" constant="30" id="UJq-II-rAp"/>
+                            <constraint firstItem="czg-Ym-PO6" firstAttribute="top" secondItem="CZ3-Sf-G1o" secondAttribute="bottom" constant="16" id="UZ9-V6-qXd"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="91u-IP-U1D" secondAttribute="bottom" id="g7L-hc-HAT"/>
                             <constraint firstAttribute="trailing" secondItem="91u-IP-U1D" secondAttribute="trailing" id="jGa-9c-1Aw"/>
-                            <constraint firstAttribute="trailing" secondItem="HJS-3Q-X3t" secondAttribute="trailing" id="lNd-wh-KHq"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="3VH-Xw-2WS" secondAttribute="trailing" constant="-38" id="len-uf-3qt"/>
+                            <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="czg-Ym-PO6" secondAttribute="bottom" constant="31" id="qbT-Ko-45I"/>
+                            <constraint firstItem="CZ3-Sf-G1o" firstAttribute="centerX" secondItem="aCU-O5-IPQ" secondAttribute="centerX" id="rry-xS-tP0"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="aCU-O5-IPQ" secondAttribute="top" id="xou-mG-rlE"/>
                         </constraints>
                     </view>
@@ -79,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDt-MB-xkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127" y="125"/>
+            <point key="canvasLocation" x="125.59999999999999" y="124.58770614692655"/>
         </scene>
         <!--InfoVC-->
         <scene sceneID="uHw-v2-gRR">
@@ -91,6 +90,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow-turn" width="256" height="256"/>
+        <image name="noun_35458" width="1200" height="1200"/>
     </resources>
 </document>
