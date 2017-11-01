@@ -109,9 +109,10 @@ class SceneController {
         let text = SCNText(string: tappedNode.name, extrusionDepth: 1)
         
         textNode.geometry = text
-        textNode.scale = SCNVector3(Contants.textScale, Contants.textScale, Contants.textScale)
-        textNode.position = SCNVector3Make(Contants.textPosition.x, Contants.textPosition.y, Contants.textPosition.z)
-        print("\(Contants.textPosition.x)  \(Contants.textPosition.y) \(Contants.textPosition.z)")
+        textNode.scale = SCNVector3(0.5, 0.5, 0.5)
+//        textNode.position = SCNVector3Make(Contants.textPosition.x, Contants.textPosition.y, Contants.textPosition.z)
+        textNode.position = SCNVector3Make(-1.836, 2.412, 0.667)
+        print("\(tappedNode.position.x)  \(tappedNode.position.y) \(tappedNode.position.z)")
 //        textNode.position = SCNVector3Make(10, 10, 10)
         tappedNode.addChildNode(textNode)
     }
