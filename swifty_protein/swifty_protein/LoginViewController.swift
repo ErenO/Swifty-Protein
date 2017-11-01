@@ -9,12 +9,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var touchId: UIButton!
     
+    @IBOutlet weak var enterBtn: UIButton!
     var lacontext: LAContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lacontext = LAContext()
         self.setUi()
+        enterBtn.layer.cornerRadius = 4
     }
     
     func setUi() {
