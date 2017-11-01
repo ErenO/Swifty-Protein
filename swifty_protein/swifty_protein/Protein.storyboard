@@ -61,19 +61,31 @@
                                     <action selector="InfoBtn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="Nke-Eb-W64"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected element : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYp-MK-RsG">
+                                <rect key="frame" x="91" y="71" width="238" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4wk-tW-bgq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leading" id="IoQ-0M-dEv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hYp-MK-RsG" secondAttribute="trailing" constant="30" id="PFc-eP-oJc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="czg-Ym-PO6" secondAttribute="trailing" constant="30" id="QtA-lb-YPz"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="3VH-Xw-2WS" secondAttribute="bottom" constant="-92" id="Ta2-vg-55C"/>
                             <constraint firstItem="czg-Ym-PO6" firstAttribute="leading" secondItem="aCU-O5-IPQ" secondAttribute="leadingMargin" constant="30" id="UJq-II-rAp"/>
                             <constraint firstItem="czg-Ym-PO6" firstAttribute="top" secondItem="CZ3-Sf-G1o" secondAttribute="bottom" constant="16" id="UZ9-V6-qXd"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="91u-IP-U1D" secondAttribute="bottom" id="g7L-hc-HAT"/>
+                            <constraint firstItem="hYp-MK-RsG" firstAttribute="leading" secondItem="3VH-Xw-2WS" secondAttribute="trailing" constant="53" id="j5Z-c6-OzV"/>
                             <constraint firstAttribute="trailing" secondItem="91u-IP-U1D" secondAttribute="trailing" id="jGa-9c-1Aw"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="leading" secondItem="3VH-Xw-2WS" secondAttribute="trailing" constant="-38" id="len-uf-3qt"/>
                             <constraint firstItem="pam-rA-fYK" firstAttribute="top" secondItem="czg-Ym-PO6" secondAttribute="bottom" constant="31" id="qbT-Ko-45I"/>
                             <constraint firstItem="CZ3-Sf-G1o" firstAttribute="centerX" secondItem="aCU-O5-IPQ" secondAttribute="centerX" id="rry-xS-tP0"/>
+                            <constraint firstItem="hYp-MK-RsG" firstAttribute="top" secondItem="tK1-wP-q7W" secondAttribute="bottom" constant="51" id="vMC-Xr-gqN"/>
                             <constraint firstItem="91u-IP-U1D" firstAttribute="top" secondItem="aCU-O5-IPQ" secondAttribute="top" id="xou-mG-rlE"/>
                         </constraints>
                     </view>

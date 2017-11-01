@@ -130,7 +130,7 @@ class SceneController {
         } else {
             if let ligand = self.ligandToDisplay {
                 for atom in ligand.atoms {
-                    self.spawn(atom: atom, size: 2)
+                    self.spawn(atom: atom, size: 1.5)
                 }
             }
         }
