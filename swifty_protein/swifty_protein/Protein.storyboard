@@ -37,20 +37,26 @@
                                     <action selector="toggleLigandTurn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="rZb-r0-xpE"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="czg-Ym-PO6">
-                                <rect key="frame" x="46" y="608" width="283" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="czg-Ym-PO6">
+                                <rect key="frame" x="46" y="609" width="283" height="29"/>
                                 <segments>
                                     <segment title="Balls &amp; sticks"/>
                                     <segment title="Space-filling"/>
                                 </segments>
+                                <connections>
+                                    <action selector="modelType:" destination="UYB-IL-ehY" eventType="valueChanged" id="4Hm-eM-Rzx"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-Sf-G1o">
                                 <rect key="frame" x="136" y="562" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47934520244598389" blue="0.99908632040023804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="xek-Gk-tHx"/>
                                     <constraint firstAttribute="width" constant="102" id="zI4-2a-3SB"/>
                                 </constraints>
-                                <state key="normal" title="More Infos"/>
+                                <state key="normal" title="More Infos">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="InfoBtn:" destination="UYB-IL-ehY" eventType="touchUpInside" id="Nke-Eb-W64"/>
                                 </connections>
@@ -72,7 +78,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="infosBtnCorner" destination="CZ3-Sf-G1o" id="L1c-WN-mdZ"/>
                         <outlet property="mySCNView" destination="91u-IP-U1D" id="Euk-LM-uNP"/>
+                        <outlet property="segmentedControl" destination="czg-Ym-PO6" id="02w-Hs-oga"/>
                         <segue destination="dCT-E4-MbQ" kind="show" identifier="ProtToInfo" id="XI3-ZY-qlF"/>
                     </connections>
                 </viewController>

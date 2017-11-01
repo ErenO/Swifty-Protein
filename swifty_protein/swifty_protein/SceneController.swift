@@ -38,7 +38,7 @@ class SceneController {
     func setupScene() {
         scnScene = SCNScene()
         self.scnView.scene = scnScene
-//        self.scnView.backgroundColor = UIColor.white
+        self.scnView.backgroundColor = UIColor.white
     }
     
     func setupCamera() {
@@ -117,22 +117,38 @@ class SceneController {
         tappedNode.addChildNode(textNode)
     }
     
-    func displayLigand() {
-        if let ligand = self.ligandToDisplay {
-            for atom in ligand.atoms {
-                self.spawn(atom: atom)
+    func displayLigand(type: Int) {
+        if type == 0 {
+            if let ligand = self.ligandToDisplay {
+                for atom in ligand.atoms {
+                    self.spawn(atom: atom, size: Contants.atomRadius)
+                }
+                for connection in ligand.connections {
+                    self.spawn(connection: connection)
+                }
             }
-            for connection in ligand.connections {
-                self.spawn(connection: connection)
+        } else {
+            if let ligand = self.ligandToDisplay {
+                for atom in ligand.atoms {
+                    self.spawn(atom: atom, size: 2)
+                }
             }
+        }
+       
+//        scnScene.rootNode.removeFromParentNode()
+    }
+    
+    func delete_nodes() {
+        scnScene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
         }
     }
     
-    func spawn(atom: Atom) {
+    func spawn(atom: Atom, size: CGFloat) {
         var geometry:SCNGeometry
         
         
-        geometry = SCNSphere(radius: Contants.atomRadius)
+        geometry = SCNSphere(radius: size)
         geometry.firstMaterial?.diffuse.contents = UIColor.CPKColors[atom.element]
        
         let geometryNode = SCNNode(geometry: geometry)
@@ -141,6 +157,7 @@ class SceneController {
         geometryNode.name = atom.elementAndNumber
         
         scnScene.rootNode.addChildNode(geometryNode)
+        
     }
     
     func spawn(connection: Connection) {

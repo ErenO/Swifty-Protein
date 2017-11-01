@@ -30,6 +30,8 @@ class InfoVC: UIViewController {
         formulaTxt.text = formula
         typeTxt.text = type
         molWeightTxt.text = weight
+        nameTxt.lineBreakMode = .byWordWrapping // notice the 'b' instead of 'B'
+        nameTxt.numberOfLines = 0
     }
     
     

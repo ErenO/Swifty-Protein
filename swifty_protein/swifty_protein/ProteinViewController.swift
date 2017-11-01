@@ -20,15 +20,33 @@ class ProteinViewController: UIViewController {
     var ligandToDisplay: Ligand?
     var xml: XMLIndexer!
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var infosBtnCorner: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneController = SceneController(scnView: mySCNView)
         sceneController.set(ligand: self.ligandToDisplay!)
-        sceneController.displayLigand()
+        sceneController.displayLigand(type: 0)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        infosBtnCorner.layer.cornerRadius = 4
         display()
     }
     
+    @IBAction func modelType(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            sceneController.delete_nodes()
+            sceneController.displayLigand(type: 0)
+        case 1:
+            sceneController.delete_nodes()
+            sceneController.displayLigand(type: 1)
+        default:
+            break;
+        }
+    }
+
     override var shouldAutorotate: Bool {
         return true
     }
@@ -87,13 +105,13 @@ class ProteinViewController: UIViewController {
         if segue.identifier == "ProtToInfo" {
             if let vc = segue.destination as? InfoVC {
                 vc.title = self.title
-                print( self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text ?? "hello")
+//                print( self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text ?? "hello")
                 vc.name = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text
-                print(self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula"].element?.text  ?? "bite")
+//                print(self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula"].element?.text  ?? "bite")
                 vc.formula = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula"].element?.text
-                print( self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula_weight"].element?.text  ?? "bite")
+//                print( self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula_weight"].element?.text  ?? "bite")
                 vc.weight = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula_weight"].element?.text
-                print(self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:type"].element?.text ?? "bite")
+//                print(self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:type"].element?.text ?? "bite")
                 vc.type = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:type"].element?.text
             }
         }
