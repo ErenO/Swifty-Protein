@@ -23,9 +23,13 @@ class InfoVC: UIViewController {
     @IBOutlet weak var typeTxt: UILabel!
     @IBOutlet weak var molWeightTxt: UILabel!
     
+    @IBOutlet weak var myScrollView: UIScrollView!
     
+    @IBOutlet weak var viewInScrollView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        myScrollView.contentSize = CGSize(width: view.frame.size.width, height: view.frame.size.height)
+            
         nameTxt.text = name
         formulaTxt.text = formula
         typeTxt.text = type
