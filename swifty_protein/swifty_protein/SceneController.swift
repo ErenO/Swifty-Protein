@@ -19,6 +19,7 @@ class SceneController {
     var cameraNode: SCNNode!
     var ligandToDisplay: Ligand?
     var connectedVC: ProteinViewController?
+    var errorScene: String?
     var tappedNode: SCNNode? {
         didSet {
             print("DID SET")
@@ -166,6 +167,11 @@ class SceneController {
     }
     
     func spawn(connection: Connection) {
+        
+        guard self.ligandToDisplay?.atoms.indices.contains(connection.atoms.1 - 1) == true, self.ligandToDisplay?.atoms.indices.contains(connection.atoms.0 - 1) == true else {
+            return
+        }
+        
         let firstAtom = self.ligandToDisplay?.atoms[connection.atoms.0 - 1]
         let secondAtom = self.ligandToDisplay?.atoms[connection.atoms.1 - 1]
         
