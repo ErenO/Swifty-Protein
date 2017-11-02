@@ -58,7 +58,8 @@ extension ProteinTableViewController:  UITableViewDelegate, UITableViewDataSourc
         if self.isSearching {
             return filteredData?.count ?? 0
         }
-        return proteinList?.count ?? 0
+        let i = (proteinList?.count)! - 1
+        return i 
     }
     
     
