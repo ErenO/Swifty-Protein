@@ -18,6 +18,13 @@ class SceneController {
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
     var ligandToDisplay: Ligand?
+    var connectedVC: ProteinViewController?
+    var tappedNode: SCNNode? {
+        didSet {
+            print("DID SET")
+            self.connectedVC?.tappedNode = self.tappedNode
+        }
+    }
     
     init(scnView: SCNView) {
         setupView(view: scnView)
@@ -89,6 +96,7 @@ class SceneController {
                             node.childNodes[0].removeFromParentNode()
                         }
                     }
+                    self.tappedNode = tappedNode
                     self.setupText(tappedNode: tappedNode)
                 }
             }
@@ -109,11 +117,8 @@ class SceneController {
         let text = SCNText(string: tappedNode.name, extrusionDepth: 1)
         
         textNode.geometry = text
-        textNode.scale = SCNVector3(0.5, 0.5, 0.5)
-//        textNode.position = SCNVector3Make(Contants.textPosition.x, Contants.textPosition.y, Contants.textPosition.z)
-        textNode.position = SCNVector3Make(-1.836, 2.412, 0.667)
-        print("\(tappedNode.position.x)  \(tappedNode.position.y) \(tappedNode.position.z)")
-//        textNode.position = SCNVector3Make(10, 10, 10)
+        textNode.scale = SCNVector3(Contants.textScale, Contants.textScale, Contants.textScale)
+        textNode.position = SCNVector3Make(Contants.textPosition.x, Contants.textPosition.y, Contants.textPosition.z)
         tappedNode.addChildNode(textNode)
     }
     

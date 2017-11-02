@@ -93,6 +93,7 @@
                         <outlet property="infosBtnCorner" destination="CZ3-Sf-G1o" id="L1c-WN-mdZ"/>
                         <outlet property="mySCNView" destination="91u-IP-U1D" id="Euk-LM-uNP"/>
                         <outlet property="segmentedControl" destination="czg-Ym-PO6" id="02w-Hs-oga"/>
+                        <outlet property="selectedElem" destination="hYp-MK-RsG" id="HaH-LB-P73"/>
                         <segue destination="dCT-E4-MbQ" kind="show" identifier="ProtToInfo" id="XI3-ZY-qlF"/>
                     </connections>
                 </viewController>
