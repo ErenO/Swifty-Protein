@@ -28,6 +28,7 @@ class ProteinViewController: UIViewController {
             }
         }
     }
+    var infoReq: InfoReq!
     
     @IBOutlet weak var selectedElem: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -41,6 +42,7 @@ class ProteinViewController: UIViewController {
         sceneController.displayLigand(type: 0)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         infosBtnCorner.layer.cornerRadius = 4
+        infoReq = InfoReq()
         display()
     }
     
@@ -80,7 +82,7 @@ class ProteinViewController: UIViewController {
     }
     
     func display() {
-        loadXML(of: self.title!) { response in
+        infoReq.loadXML(of: self.title!) { response in
             print("callback")
             //            print(response)
             self.xml = SWXMLHash.config {
@@ -89,24 +91,7 @@ class ProteinViewController: UIViewController {
                 }.parse(response as! String)
         }
     }
-    
-    func loadXML(of: String, callback:@escaping ((Any) -> Void)) {
-        Alamofire.request(self.getPath(with: of)).responseData(completionHandler: { response in
-            if response.response?.statusCode == 200 {
-                let fileData = String(data: response.data!, encoding: .utf8)
-                callback(fileData!)
-            }
-        })
-        
-    }
-    
-    func setTitle(str: String) {
-        self.title = str
-    }
-    
-    func getPath(with: String) -> String {
-        return "http://files.rcsb.org/ligands/view/" + self.title! + ".xml"
-    }
+
     
     @IBAction func InfoBtn(_ sender: Any) {
         performSegue(withIdentifier: "ProtToInfo", sender: nil)
@@ -116,13 +101,9 @@ class ProteinViewController: UIViewController {
         if segue.identifier == "ProtToInfo" {
             if let vc = segue.destination as? InfoVC {
                 vc.title = self.title
-//                print( self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text ?? "hello")
                 vc.name = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:name"].element?.text ?? "Error"
-//                print(self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula"].element?.text  ?? "bite")
                 vc.formula = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula"].element?.text ?? "Error"
-//                print( self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula_weight"].element?.text  ?? "bite")
                 vc.weight = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:formula_weight"].element?.text ?? "Error"
-//                print(self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:type"].element?.text ?? "bite")
                 vc.type = self.xml["PDBx:datablock"]["PDBx:chem_compCategory"]["PDBx:chem_comp"]["PDBx:type"].element?.text ?? "Error"
             }
         }
