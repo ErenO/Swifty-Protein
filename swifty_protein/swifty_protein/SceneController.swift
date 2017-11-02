@@ -22,7 +22,6 @@ class SceneController {
     var errorScene: String?
     var tappedNode: SCNNode? {
         didSet {
-            print("DID SET")
             self.connectedVC?.tappedNode = self.tappedNode
         }
     }
@@ -30,7 +29,6 @@ class SceneController {
     init(scnView: SCNView) {
         setupView(view: scnView)
         setupScene()
-        setupCamera()
     }
     
     func setupView(view: SCNView) {
@@ -81,6 +79,7 @@ class SceneController {
     
     func set(ligand: Ligand) {
         self.ligandToDisplay = ligand
+        setupCamera()
     }
     
     @objc func handleFrontTap(sender: UITapGestureRecognizer) {
