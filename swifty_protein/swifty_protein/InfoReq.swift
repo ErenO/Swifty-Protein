@@ -21,7 +21,6 @@ class InfoReq {
         Alamofire.request(self.getPath(with: of)).responseData(completionHandler: { response in
             if response.response?.statusCode == 200 {
                 let fileData = String(data: response.data!, encoding: .utf8)
-                //                    let myLigand = self.parser.getInfo(name: of, data: fileData!)
                 callback(fileData!)
             }
         })
@@ -29,9 +28,7 @@ class InfoReq {
     }
     
     func getPath(with: String) -> String {
-//        let firstLetter = String(with.characters.prefix(1))
-        return URLS.xml +  with + "/" + URLS.xmlExt
+        return "http://files.rcsb.org/ligands/view/" + with + ".xml"
     }
-    
     
 }
