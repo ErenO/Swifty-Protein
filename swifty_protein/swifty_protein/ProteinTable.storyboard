@@ -38,11 +38,11 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lqN-3w-bWT" id="POs-6M-u7o">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlI-JF-GP1">
-                                                    <rect key="frame" x="8" y="27" width="651" height="21"/>
+                                                    <rect key="frame" x="35" y="27" width="332" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="wlI-JF-GP1" secondAttribute="bottom" constant="18.5" id="B6h-0U-UNL"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="wlI-JF-GP1" secondAttribute="leading" id="VKS-Ho-bFY"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="wlI-JF-GP1" secondAttribute="leading" constant="-27" id="VKS-Ho-bFY"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wlI-JF-GP1" secondAttribute="trailing" id="XZj-O7-BHh"/>
                                                 <constraint firstItem="wlI-JF-GP1" firstAttribute="top" secondItem="POs-6M-u7o" secondAttribute="topMargin" constant="19" id="gtE-MJ-xcU"/>
                                             </constraints>
