@@ -37,6 +37,9 @@ class PdbParser {
                 }
             }
         }
+//        var fakeConnection = Connection()
+//        fakeConnection.atoms = (100, 100)
+//        myLigand.connections.insert(fakeConnection, at: 0)
         return myLigand
     }
     

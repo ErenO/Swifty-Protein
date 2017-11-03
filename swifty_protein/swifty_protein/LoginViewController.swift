@@ -46,11 +46,11 @@ class LoginViewController: UIViewController {
                         self.goToTable()
                     }
                     else {
-                        DispatchQueue.main.async {
-                            let alert = UIAlertController(title: "Error", message: "something went wrong", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
-                        }
+//                        DispatchQueue.main.async {
+//                            let alert = UIAlertController(title: "Error", message: "something went wrong", preferredStyle: .alert)
+//                            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+//                            self.present(alert, animated: true, completion: nil)
+//                        }
                     }
                 }
             })
