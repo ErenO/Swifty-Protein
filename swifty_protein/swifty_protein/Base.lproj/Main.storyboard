@@ -49,7 +49,7 @@
                                     <action selector="clickFingerprint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pGZ-Xq-qOK"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="748" misplaced="YES" image="1j+ojl1FOMkX9WypfBe43D6kjfKCrBRLnx7EwXs1M3EMoAJtlSAlgfRo9fo9" translatesAutoresizingMaskIntoConstraints="NO" id="jiC-PC-VoU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="748" image="1j+ojl1FOMkX9WypfBe43D6kjfKCrBRLnx7EwXs1M3EMoAJtlSAlgfRo9fo9" translatesAutoresizingMaskIntoConstraints="NO" id="jiC-PC-VoU">
                                 <rect key="frame" x="116" y="41" width="88" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="0Q0-48-1Mz"/>
@@ -81,7 +81,7 @@
                             <constraint firstItem="KP8-O1-NaH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Kv-Lc-k9s"/>
                             <constraint firstItem="gae-LH-5wW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="121" id="41F-xX-XF0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gae-LH-5wW" secondAttribute="trailing" constant="121" id="4cC-Ka-1Ac"/>
-                            <constraint firstItem="jiC-PC-VoU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4fI-QS-Lfx"/>
+                            <constraint firstItem="jiC-PC-VoU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="4fI-QS-Lfx"/>
                             <constraint firstItem="KP8-O1-NaH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="BFp-2M-DeF"/>
                             <constraint firstItem="jiC-PC-VoU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LFe-bs-AW0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1oN-yS-vUi" secondAttribute="bottom" constant="20" id="SYq-Kh-iVJ"/>
